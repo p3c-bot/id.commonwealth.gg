@@ -53,6 +53,7 @@
                     </div>
                     <span>
                         <select id="language">
+<option value="id">🇮🇩&emsp;ID</option>
                             <option value="en">🇬🇧&emsp;EN</option>
                             <option value="ru">🇷🇺&emsp;RU</option>
                             </select>
@@ -70,19 +71,19 @@
                     </div> -->
                     <a href="/index.html">
                         <div class="opacity">
-                            <strong>Home
+                            <strong>Rumah
                             </strong>
                         </div>
                     </a>
                     <a href="/games.html">
                         <div class="opacity">
-                            <strong>Games
+                            <strong>Permainan
                             </strong>
                         </div>
                     </a>
                     <a href="/chart.html">
                         <div class="opacity">
-                            <strong>Chart
+                            <strong>Grafik
                             </strong>
                         </div>
                     </a>
@@ -104,24 +105,24 @@
         <div class="ui stackable grid">
             <div id="myHoldings" class="eight wide column border right border left" style="background: rgba(58, 150, 139, 0.17);">
                 <h1 class="ui header" style="margin-bottom: 0px;">
-                    <div style="margin-left: 10px;" class="content"><i id="portfolioButton" class="chart university icon portfolio"></i> My Account</div>
+                    <div style="margin-left: 10px;" class="content"><i id="portfolioButton" class="chart university icon portfolio"></i> Akun Saya</div>
                 </h1>
                 <div class="ui horizontal segments" style="margin-top: 5px">
 
                     <div class="ui padded center aligned segment" id="myTokens">
                         <h2 class="ui header">
-                            Balance
+                            <i id="infoSaldo">Saldo</i>
                             <div class="sub header notranslate">
                                 <span id="myTokensValue" class="converted" style="font-weight:bold;"></span><span id="myDayChange" class="converted" style="font-weight:bold;"></span>
                                 <div class="ui teal text small eleven">
-                                    <span id="myCropTokens" class="count"></span> Points<span class="custom-computer only"> / <span id="myETCValue" class="notranslate" style="font-weight:bold;"></span> ETC</span>
+                                    <span id="myCropTokens" class="count"></span> Poin<span class="custom-computer only"> / <span id="myETCValue" class="notranslate" style="font-weight:bold;"></span> ETC</span>
                                 </div>
                             </div>
                         </h2>
                     </div>
                     <div class="ui padded center aligned segment" id="myDividends">
                         <h2 class="ui header">
-                            Dividends
+                            <i id="infoDividen">Dividen</i>
                             <div class="sub header notranslate">
                                 <span id="myDividendsValue" class="converted" style="font-weight:bold;"></span>
                                 <div class="ui teal text small eleven">
@@ -134,18 +135,18 @@
 
                 <div class="ui two column centered grid">
                     <div class="column smallpad-left">
-                        <button id="reinvest" class="ui teal fluid button large" style="padding-left: 0px; padding-right: 0px;"><i class="recycle icon"></i>Compound Dividends</button>
+                        <button id="reinvest" class="ui teal fluid button large" style="padding-left: 0px; padding-right: 0px;"><i class="recycle icon"></i>Reinvestasi</button>
                     </div>
                     <div class="column smallpad-right">
-                        <button id="withdraw" class="ui teal fluid button large"><i class="money bill alternate  icon"></i>Take Dividends</button>
+                        <button id="withdraw" class="ui teal fluid button large"><i class="money bill alternate  icon"></i>Tarik Dana</button>
                     </div>
                 </div>
                 <!-- <div class="ui one column centered grid" style="margin-top: 0px;">
                     <div class="column" style="padding-bottom: 10px;">
                         <div class="ui horizontal segment">
                             <div id="sponsor" class="sponsor"></div>
-                            <span class="ui text blue small" style="float: right"><a href="/sponsor.html" target="_blank">Buy
-                                    this sponsorship space!</a></span>
+                            <span class="ui text blue small" style="float: right"><a href="/sponsor.html" target="_blank">Beli
+                                    Ini ruang sponsor!</a></span>
                         </div>
                     </div>
                 </div> -->
@@ -155,13 +156,13 @@
                 <h2 class="ui header">
                     <img src="img/time-forward.svg" class="width one and eight" />
                     <div class="content">
-                        <span>Buy Points</span>
+                        <span>Beli Poin</span>
                     </div>
                 </h2>
 
                 <div class="ui fluid large basic buttons" style="margin-bottom:10px;">
                     <div class="ui button price no click">
-                        <strong>Price</strong>
+                        <strong>Harga</strong>
                     </div>
 
                     <div class="ui positive button price no click">
@@ -174,29 +175,29 @@
                 </div>
                 <div class="ui right labeled left icon input fluid large buy">
                     <i class="ethereum green icon"></i>
-                    <input placeholder="ETC to Spend..." type="text" id="buyInput">
+                    <input placeholder="Jumlah ETC untuk membeli..." type="text" id="buyInput">
                     <div class="ui tag green label notranslate">
                         ETC
                     </div>
                 </div>
                 <button id="buy" class="ui large fluid green button" style="margin-top:10px;">
-                    Buy Points
+                    Beli Poin
                 </button>
                 <div id="buyAmount" class="ui fluid large basic green button approx no click buy-amount">
-                    <i>How much will you buy?</i>
+                    <i>Berapa yang ingin anda beli?</i>
                 </div>
             </div>
             <div class="four wide column sell">
                 <h2 class="ui header">
                     <img src="img/time-backward.svg" class="width one and eight" />
                     <div class="content">
-                        <span>Sell Points</span>
+                        <span>Jual Poin</span>
                     </div>
                 </h2>
 
                 <div class="ui fluid large basic buttons" style="margin-bottom:10px;">
                     <div class="ui button price no click">
-                        <strong>Price</strong>
+                        <strong>Harga</strong>
                     </div>
 
                     <div class="ui button price no click">
@@ -211,16 +212,16 @@
 
                 <div class="ui right labeled left icon input fluid large">
                     <i class="tree blue icon"></i>
-                    <input placeholder="Points to Sell..." type="text" id="sellInput">
+                    <input placeholder="Jumlah Poin untuk dijual..." type="text" id="sellInput">
                     <span class="ui tag blue label">
-                        Points
+                        Poin
                     </span>
                 </div>
                 <button id="sell" class="ui large fluid blue button" style="margin-top:10px;">
-                    Sell Points
+                    Menjual Poin
                 </button>
                 <div id="sellAmount" class="ui fluid large basic blue button no click approx" style="margin-top:10px;">
-                    <i>How much will you sell?</i>
+                    <i>Berapa yang ingin anda jual ?</i>
                 </div>
             </div>
         </div>
@@ -228,11 +229,11 @@
         <div style="background-color: #eee; height: 1px; margin-top:20px; margin-bottom:20px;"></div>
 
         <div id="warning" class="ui olive message">
-            <p>Make sure you have an
+            <p>Pastikan anda memiliki
                 <a target="_blank" href="https://chrome.google.com/webstore/detail/saturn-wallet/nkddgncdjgjfcddamfgcmfnlhccnimig">Ethereum
                     Classic</a>
-                Wallet enabled</a>, and Metamask turned off. <b>Contract will show no balance if wallet not
-                    connected properly!</b> <a target="_blank" href="https://youtu.be/tBbl_nbp8_k"><b>Video
+                Dompet diaktifkan</a>, dan metamask dimatikan. <b>Kontrak tidak akan menunjukkan saldo jika dompet tidak
+                     terhubung dengan benar!</b> <a target="_blank" href="https://youtu.be/tBbl_nbp8_k"><b>Video
                         Tutorial.</b></a>
                 </b>
             </p>
@@ -242,7 +243,7 @@
             <div class="eight wide column">
                 <div class="ui segment">
                         <h4 class="ui header" style="text-align: left;">
-                            <b>Point Price</b><span class="ui green text small">&nbsp;| Last 90 Days</span>
+                            <b>Harga poin</b><span class="ui green text small">&nbsp;| 90 hari terakhir</span>
                         </h4>
                         <svg id="container"></svg>
                         <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px;">(More Data at Xenobank.com)</a>
@@ -250,15 +251,15 @@
                 <div style="text-align: center">
                         <a id="copyMNButton" data-clipboard-text="" class="ui left labeled icon large fluid green button copy"
                             style="margin-bottom:10px;"> <i class="left magic icon"></i>
-                            Press for a Referral Link! 
+                             Tekan untuk Tautan Referensi!
                         </a>
                     </div>
                 <div id="masternode" class="ui segments masternode hidden">
                         <div class="ui segment" style="text-align: left;">
                             <p style="margin-bottom: 4px;">
-                                <strong>33%</strong> of the Commonwealth fee goes to referrer when link is used.<a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank"> Details.</a>
+                                <strong>33%</strong> dari biaya Commonwealth berlaku untuk perujuk ketika tautan digunakan.<a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank"> Detail.</a>
                             </p>
-                            <div id="refDivs" style="text-align: center;">Recent Referral Dividends: <span id="myRefDividends"></span></div> 
+                            <div id="refDivs" style="text-align: center;">Dividen Referral Terbaru: <span id="myRefDividends"></span></div> 
                         </div>
                         <!-- <div class="ui secondary segment">
                             <div class="link masternode">
@@ -272,7 +273,7 @@
                             <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button"
                                 style="margin-bottom:10px;">
                                 <i class="left comments icon"></i>
-                                Need Help? Press to Chat.
+                                Butuh bantuan? Tekan untuk Mengobrol.
                             </a>
                         </div>
                     <div class="ui segments" style="margin: 0px;">
@@ -280,12 +281,12 @@
                                 <h4 class="ui header">
                                     <i class="circular inverted blue exchange alternate icon"></i>
                                     <div class="content">
-                                        <div class="sub header"><b>Transfer Points</b>. <i>(Dividends will go to your wallet).</i></div>
+                                        <div class="sub header"><b>Poin Transfer</b>. <i>(Dividen akan masuk ke dompet Anda).</i></div>
                                     </div>
                                 </h4>
                             </div>
                             <div class="ui segment notranslate">
-                                <b>My Crop:</b> <span id="myCropAddress" class="approx"></span> <button id="copyAddressButton"
+                                <b>Crop Saya:</b> <span id="myCropAddress" class="approx"></span> <button id="copyAddressButton"
                                     class="ui primary basic button copy" data-clipboard-text="">
                                     <i class="copy icon"></i>
                                 </button>
@@ -293,15 +294,15 @@
                             <div class="ui segment">
                                 <form class="ui form">
                                     <div class="field">
-                                        <input type="text" id="transferAddress" placeholder="         Destination Address">
+                                        <input type="text" id="transferAddress" placeholder="         Alamat Crop tujuan">
                                     </div>
                                 </form>
                             </div>
                             <div class="ui segment">
                                 <div class="ui right labeled left icon input fluid buy">
-                                    <input type="text" id="transferTokenCount" placeholder="Amount of Points">
+                                    <input type="text" id="transferTokenCount" placeholder="Jumlah Poin">
                                     <div class="ui tag teal label notranslate">
-                                        Points
+                                        Poin
                                     </div>
                                 </div>
                             </div>
@@ -313,14 +314,14 @@
                             </div>
                             <div class ="ui segment">
                                 <div id="autoReinvest" class="ui toggle checkbox reinvest" style="margin-top: 0px; padding-top: 0px; top: 7px;">
-                                    <input type="checkbox" name="public"></div><label id="reinvestToggle" for="autoReinvest">Auto Compound <i id="infoButton" class="info circle icon"></i></label>                    
+                                    <input type="checkbox" name="public"></div><label id="reinvestToggle" for="autoReinvest">Auto Reinvest <i id="infoButton" class="info circle icon"></i></label>                    
                                 </div>
                             </div>
                             <!-- <div class="ui segment">
                                 <a id="refillButton" class="donate-with-crypto ui right labeled icon large fluid orange button coinbase-override"
                                     style="padding-top: 10px" href="https://commerce.coinbase.com/checkout/ea25233e-7a3f-4554-b450-41d13dfdc6ff">
                                     <i class="right bitcoin icon"></i>
-                                    <span class="coinbase-override">Buy P3C with other Currencies</span>
+                                    <span class="coinbase-override">Beli P3C dengan Mata Uang lainnya</span>
                                 </a>
                                 <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
                                 </script>
@@ -336,55 +337,49 @@
             <div class="ui stackable inverted divided equal height stackable grid">
                 <div class="three wide column">
                     <div class="ui inverted link list">
-                        <a class="item" href="/">Home</a>
-                        <a class="dashboard-link item" href="/use.html">Wallet</a>
-                        <a href="/chart.html" class="item">Chart</a>
-                        <a href="/commonwealth.pdf" target="_blank" class="item">White Paper</a>
+                        <a class="item" href="/">Rumah</a>
+                        <a class="dashboard-link item" href="/use.html">Dompet</a>
+                        <a href="/chart.html" class="item">Grafik</a>
+                        <a href="/commonwealth.pdf" target="_blank" class="item">Kertas putih</a>
                         <a href="https://github.com/p3c-bot/p3c-bot.github.io" target="_blank" class="item"><i class="github icon"></i>Github</a>
                     </div>
                 </div>
                 <div class="three wide column">
                     <div class="ui inverted link list" style="margin-top:0px;">
-                        <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left comments icon"></i> Discord Chat</a>
+                        <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left comments icon"></i> Chat Discord</a>
                         <a href="https://twitter.com/commonwealthgg" target="_blank" class="item">Twitter</a>
                         <a href="https://medium.com/@masterhax/" target="_blank" class="item">Blog</a>
-                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Smart Contract</a>
-                        <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Docs</a>
+                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Kontrak Cerdas</a>
+                        <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Documents</a>
                     </div>
                 </div>
                 <div class="ten wide column">
-                    <h5 class="ui inverted header">Disclaimer</h5>
+                    <h5 class="ui inverted header">Penolakan</h5>
                     <p class="instruction disclaimer">
-                        This project is experimental. Do not send any <span class="notranslate">ETC</span> you cannot
-                        afford to
-                        lose. There is zero guarantee
-                        that you will make <span class="notranslate">ETC</span>. This is very new technology and we
-                        kindly ask
-                        anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth.
-                        The
-                        contract is running <a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">here</a>
-                        and cannot be changed. Don't trust, verify.
+                        Proyek ini bersifat eksperimental. Jangan kirim apa pun,Anda bisa kehilangan <span class="notranslate">ETC</span> Anda. Tidak ada jaminan untuk <span class="notranslate">ETC</span>anda. Ini adalah teknologi yang sangat baru dan kami dengan hormat meminta siapa pun yang tidak memahami risiko yang melekat pada teknologi Blockchain untuk tidak berpartisipasi dalam Commonwealth.Kontrak berjalan di
+                         <a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>
+                        dan tidak dapat diubah. jangan percaya, verivikasi.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://commonwealth.gg/js/jquery.min.js"></script>
-    <script src="https://commonwealth.gg/js/alertify.min.js"></script>
-    <script src="https://commonwealth.gg/js/semantic.min.js"></script>
-    <script src="https://commonwealth.gg/js/web3.min.js"></script>
-    <script src="https://commonwealth.gg/js/clipboard.min.js"></script>
-    <script src="https://commonwealth.gg/js/lodash.min.js"></script>
-    <script src="https://commonwealth.gg/js/d3.v5.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/alertify.min.js"></script>
+    <script src="/js/semantic.min.js"></script>
+    <script src="/js/web3.min.js"></script>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/lodash.min.js"></script>
+    <script src="/js/d3.v5.min.js"></script>
 
-    <script src="https://commonwealth.gg/lib/util.js"></script>
-    <script src="https://commonwealth.gg/lib/contracts.js"></script>
-    <script src="https://commonwealth.gg/lib/farm.js"></script>
-    <script src="https://commonwealth.gg/lib/masternode.js"></script>
-    <script src="https://commonwealth.gg/lib/charts.js"></script>
-    <script src="https://commonwealth.gg/lib/prices.js"></script>
-    <script src="https://commonwealth.gg/lib/use.js"></script>
+    <script src="/lib/util.js"></script>
+    <script src="/lib/contracts.js"></script>
+    <script src="/lib/farm.js"></script>
+    <script src="/lib/masternode.js"></script>
+    <script src="/lib/charts.js"></script>
+    <script src="/lib/prices.js"></script>
+    <script src="/lib/use.js"></script>
 </body>
 <source src="/doc-assets/register.mp3" type="audio/mpeg">
 <div id="sound"></div>
