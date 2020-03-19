@@ -1,16 +1,12 @@
+ /* animate.css -https://daneden.github.io/animate.css/ */
+ /* Version - 3.7.2 */
+ /* Licensed under the MIT license */
+ /* http://opensource.org/licenses/MIT */
+ /* Copyright (c) 2019 Daniel Eden */
 
-
-/*!
- * animate.css -https://daneden.github.io/animate.css/
- * Version - 3.7.2
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2019 Daniel Eden
- */
-
-/*-------------------------------------------*/
+/* ----------------------------------------- */
 /* Custom animated sledUp MoD by CyBerBounty */
-/*-------------------------------------------*/
+/* ----------------------------------------- */
 
 
 @-webkit-keyframes sledInRight {
@@ -87,9 +83,9 @@
 
 
 
-/*----------------------------*/
-/*Scryps origin by Daniel Eden*/
-/*----------------------------*/
+/* -------------------------------------- */
+/* Scryps slideInUp Origin by Daniel Eden */
+/* -------------------------------------- */
 
 
 @-webkit-keyframes slideInUp {
