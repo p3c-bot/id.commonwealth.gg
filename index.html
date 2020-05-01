@@ -172,37 +172,67 @@
                             <div class="icon-main">
                                 <i class="fas fa-exchange-alt"></i>
                             </div>
-                            <h2 class="feature-title">Transparan.</h2>
-                            <hr class="line">
-                            <img class="logo" src="/img/vault.jpg" alt="Phoenix">
-                            <h3 style="margin-top:10px;">Kami menggunakan
-<i>kontrak pintar</i> sebagai brankas digital untuk tabungan dunia.</h3>
-                        </div>
-                        <div class="column" style="padding-top: 0px;">
-                            <div class="icon-main">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h2 class="feature-title">Uang.</h2>
-                            <hr class="line">
-                            <img class="logo mobile only" src="/img/earth.png" alt="Phoenix">
-                            <img class="logo custom-computer only" src="/img/earth-small.png" alt="Phoenix">
-                            <h3 style="margin-top:10px;">Vault Commonwealth membayar dividen kembali kepada pengguna seperti yang digunakan.</h3>
-                        </div>
-                        <div class="column">
-                            <div class="icon-main">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <h2 class="feature-title">Selamanya.</h2>
-                            <hr class="line">
-                            <img class="logo" style="width: 100%" src="/img/team.jpg" alt="Phoenix">
-                            <h3 style="margin-top:10px;">Kami makmur secara global! Instrumen keuangan terbuka untuk ditabung.</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <br>
+                            
+                            
+                            <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3 Transparent</div>
+  <img src="img/vault.jpg" style="width:100%">
+  <div class="text1">Kami menggunakan
+<i>kontrak pintar</i> sebagai brankas digital untuk tabungan dunia.
+
+</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3 Money</div>
+  <img src="img/ea.png" style="width:100%">
+  <div class="text1">Vault Commonwealth membayar dividen kembali kepada pengguna seperti yang digunakan.
+
+</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3 Forever</div>
+  <img src="img/team.jpg" style="width:100%">
+  <div class="text1">Kami makmur secara global! Instrumen keuangan terbuka untuk ditabung.
+
+</div>
+</div>
+</div>
+</div>
+</div>                        
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = 
+dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
         <div style="text-align:center;">
             <div class="center aligned row">
             <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large green button"
