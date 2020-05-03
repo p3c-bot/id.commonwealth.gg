@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@commonwealthgg" />
+    <meta name="twitter:title" content="Commonwealth Tribes" />
+    <meta name="twitter:description" content="Grow your tribe and gain virtual followers!"/>
+    <meta name="twitter:image" content="https://commonwealth.gg/img/tribes/civilization.jpg"/>
+    <meta property="og:url" content="https://commonwealth.gg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Commonwealth" />
+    <title>Tribes</title>
+    <meta charset="utf8">
+    <meta name="description" content="The Commonwealth pure wallet interface. Useful for exchanges, developers, and merchants.">
+    <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology,Savings Fund, P3C, Commonwealth.gg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/lib/semantic.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/lib/alertify.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/tribes.css">
+    <link rel="icon" type="image/png" href="img/tribes/moai.png">
+    <!-- GA -->
+    <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141280467-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-141280467-1');
+    </script>
+</head>
+
+<body>
+    <div class="ui large primary stackable menu" style="border-radius:0px !important; background-color: whitesmoke;">
+        <div class="ui container">
+            <div class="header">
+                <a class="item" href="/tribes.html">
+                    <img src="img/tribes/moai.png" style="height: 45px;" ui mini image" />
+                    <h2 class="title" style="color: black;">Commonwealth</h2>
+                    <div class="opacity mobile only">
+                        <strong> Tribes: <span id="tribeNumberMobile"></span>
+                        </strong>
+                    </div>
+                </a>
+            </div>
+
+            <div class="right menu custom-computer only">
+                <div class="item">
+                    <a href="/index.html">
+                        <div class="opacity" style="color: black;">
+                            <strong>Home
+                            </strong>
+                        </div>
+                    </a>
+                    <a href="/tribes.html" style="color: black;">
+                        <div class="opacity">
+                            <strong>Tribes
+                            </strong>
+                        </div>
+                    </a>
+                    <a href="/use.html">
+                        <div class="opacity" style="color: black;">
+                            Account: <span id="myCropTokens"></span> P3C
+                        </div>
+                    </a>
+                    <a href="/tribes.html">
+                        <div class="opacity" style="color: black;">
+                            <strong>
+                                <i class="users icon"></i>
+                            </strong>
+                            Tribes: <span id="tribeNumber"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui container margin top two">
+
+        <div class="ui stackable grid">
+            <div id="myHoldings" class="eight wide column border right border left">  
+                <div class="four wide column sell">
+                <h2 class="ui header">
+                    <i id="infoTribeName" class="content">Current</i>
+                </h2>
+                <table class="ui celled table unstackable">
+                    <thead>
+                      <tr>
+                      <th>ID</th>
+                      <th>Age</th>
+                      <th>Cost</th>
+                      <th>Reward</th>
+                      <th>Size</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr>
+                        <td id="infoTribeId" data-label="ID">Null</td>
+                        <td id="infoTribeAge" data-label="Age">0 Seconds</td>
+                        <td id="infoTribeCost" data-label="Cost">0 ETC</td>
+                        <td id="infoTribeReward" data-label="Cost">0 P3C</td>
+                        <td id="infoTribeSize" data-label="Seats">0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <button id="join" class="ui large fluid blue button" style="margin-top:10px;">
+                    Join this Tribe! <div id="buttonTribeCost"></div>
+                </button>
+                <div id="refundArea">
+                <h2>You're in the tribe, now find other players!</h2>
+                <a href="#" id="refund" class="ui large fluid orange button" style="margin-top:10px;">
+                    Refund
+                </a>
+                </div>
+                </div>
+                <br>
+                <div style="text-align: center">
+                  <a id="copyTribeButton" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
+                      <i class="left magic icon"></i>
+                      Copy Tribe Link
+                  </a>
+                </div>
+                <br>
+                <div class="ui green progress" id="tribeSize">
+                    <div class="bar">
+                      <div class="progress"></div>
+                    </div>
+                    <div class="label" id="tribeLabel">Null Waiting / Null Total</div>
+                  </div>
+            </div>
+            <div class="eight wide column buy" id="buyArea">
+              <h2><i class="globe icon"></i>Tribe Location</h2>
+              <iframe id="map" style="width:100%; height: 400px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjN9bBBMOM3j33HZYkueaV7akl8IMciE0&q=-33.8569,151.2152&center=-33.8569,151.2152&zoom=4&maptype=roadmap"></iframe>
+            </div>
+        </div>
+
+        <div style="background-color: #eee; height: 1px; margin-top:20px; margin-bottom:20px;"></div>
+        <div class="ui stackable grid">
+            <div class="eight wide column">
+                <div style="text-align: center">
+                    <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button"
+                        style="margin-bottom:10px;">
+                        <i class="left discord icon"></i>
+                        Need Help? Join Discord!
+                    </a>
+                </div>
+                <div class="ui segments">
+                    <div class="ui segment">
+                            <h4 style="">Q: How does this game work?<i class="right arrow icon"></i></h4>
+                            <h4 style="text-align: left">
+                                <p >The purpose of the Commonwealth Tribes is to reduce risk in investing in Commonwealth. Invest as a group!</p>
+                                <ul>
+                                    <li>When a game is created, each user puts ETC into the contract. The ETC can be refunded at any time.</li>
+                                    <li>Once the game is full, all ETC is used to buy into Commonwealth. P3C is spread equally among players. </li>
+                                    <li>Every user receives their P3C as well as a 3% bonus!</li>
+                                </ul>
+                            </h4>
+                        </div>
+                </div>
+            </div>     
+            <div class="eight wide column">
+                <div class="ui segments">
+                        <div class="ui segment">
+                          <h2 class="ui header">
+                            <div class="content">
+                                <span>Create a New Tribe</span>
+                            </div>
+                        </h2>
+        
+                        <form>
+                            <div class="ui right labeled left icon input fluid large buy">
+                              <i class="tag green icon"></i>
+                              <input type="text" id="tribeName" placeholder="Max 32 Characters">
+                              <div class="ui tag teal label notranslate">Name</div>
+                            </div>
+                            <br>
+                            <div class="ui right labeled left icon input fluid large buy">
+                              <i class="ethereum green icon"></i>
+                              <input type="text" id="entryCost" placeholder="Min .001 ETC">
+                              <div class="ui tag green label notranslate">ETC</div>
+                            </div>
+                        <br/>
+                        
+                        <div class="ui right labeled left icon input fluid large buy">
+                            <i class="users green icon"></i>
+                            <input type="text" id="amountOfMembers" placeholder="Min. 2">
+                            <div class="ui tag blue label notranslate">Members</div>
+                        </div>
+                            
+                            <div>
+                                <span id="tribeAddress"></span>
+                            </div>
+                        
+                        <a href="#" id="createTribe" class="ui large fluid green button" style="margin-top:10px;">
+                            Create Tribe
+                        </a>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <a class="item" href="/">Home</a>
+                        <a class="dashboard-link item" href="/use.html">Wallet</a>
+                        <a href="/chart.html" class="item">Chart</a>
+                        <a href="/commonwealth.pdf" target="_blank" class="item">White Paper</a>
+                        <a href="https://github.com/p3c-bot/p3c-bot.github.io" target="_blank" class="item"><i class="github icon"></i>Github</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <div class="ui inverted link list" style="margin-top:0px;">
+                        <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left discord icon"></i>Discord Chat</a>
+                        <a href="https://twitter.com/commonwealthgg" target="_blank" class="item">Twitter</a>
+                        <a href="https://medium.com/@masterhax/" target="_blank" class="item">Blog</a>
+                        <a href="/commonwealth.pdf" target="_blank" class="item">White Paper</a>
+                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Smart Contract</a>
+                        <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Docs</a>
+                    </div>
+                </div>
+                <div class="ten wide column">
+                    <h5 class="ui inverted header">Disclaimer</h5>
+                    <p class="instruction disclaimer">
+                        This project is experimental. Do not send any <span class="notranslate">ETC</span> you cannot
+                        afford to
+                        lose. There is zero guarantee
+                        that you will make <span class="notranslate">ETC</span>. This is very new technology and we
+                        kindly ask
+                        anyone who doesn't grasp the risks inherent to Blockchain technology to not participate in Commonwealth.
+                        The
+                        contract is running <a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">here</a>
+                        and cannot be changed. Don't trust, verify.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/alertify.min.js"></script>
+    <script src="lib/semantic.min.js"></script>
+    <script src="lib/web3.min.js"></script>
+    <script src="lib/clipboard.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    
+    <script src="js/util.js"></script>
+    <script src="js/etc/contracts.js"></script>
+    <script src="js/etc/wallet/farm.js"></script>
+    <script src="js/etc/wallet/use.js"></script>
+    <script src="js/etc/tribes/tribe.js"></script>
+</body>
+</html>

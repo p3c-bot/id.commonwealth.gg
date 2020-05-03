@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@commonwealthgg" />
+        <meta name="twitter:title" content="Commonwealth Tribes" />
+        <meta name="twitter:description" content="Grow your tribe and gain virtual followers!"/>
+        <meta name="twitter:image" content="https://commonwealth.gg/img/tribes/civilization.jpg"/>
+        <meta property="og:url" content="https://commonwealth.gg/tribes" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Commonwealth" />
+        <title>Tribes</title>
+        <meta charset="utf8">
+        <meta name="description" content="The Commonwealth pure wallet interface. Useful for exchanges, developers, and merchants.">
+        <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology,Savings Fund, P3C, Commonwealth.gg">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="css/lib/semantic.min.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/lib/alertify.min.css" />
+        <link rel="stylesheet" href="css/lib/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/lib/responsive.dataTables.min.css">    
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/tribes.css">
+        <link rel="icon" type="image/png" href="img/tribes/moai.png">
+        <!-- GA -->
+        <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141280467-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-141280467-1');
+        </script>
+    </head>
+    <body>
+        <div class="ui large inverted stackable menu gradient emerald" style="border-radius:0px !important;">
+            <div class="ui container">
+                <a class="header item" href="/tribes.html">
+                    <img src="img/tribes/moai.png" style="height: 45px;" ui mini image" />
+                    <h2 class="title">Commonwealth Tribes</h2>
+                </a>
+                <div class="right menu">
+                    <div class="item">
+                        <a href="/index.html">
+                            <div class="opacity">
+                                <strong>Home
+                                </strong>
+                            </div>
+                        </a>
+                        <a href="/tribes.html">
+                            <div class="opacity">
+                                <strong>
+                                    <i class="users icon"></i>
+                                </strong>
+                                Tribes: <span id="tribeNumber"></span>
+                            </div>
+                        </a>
+                        <div class="opacity">
+                            <a href="https://pro.coinbase.com/trade/ETC-USD" style="color: white" target="_blank"><strong>
+                                <span>ETC Price:&nbsp;</span>
+                            </strong>
+                            $<span id="price">0.0</span>
+                            </a>
+                        </div>
+                        <div class="opacity">
+                            <a href="/use.html" style="color: white" target="_blank">Wallet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui container margin top two">
+            <div class="ui stackable grid">
+                <div class="sixteen wide column border right border left" style="background: rgba(58, 150, 139, 0.17);">
+                    <h1 class="ui header">
+                        <div class="content">Active Tribes
+                    </h1>
+                    <table id="tribes" class="display">
+                        <thead>
+                            <tr>
+                                <th>Tribe</th>
+                                <th>Name</th>
+                                <th>Joined</th>
+                                <th>Power Level</th>
+                                <th>Cost</th>
+                                <th>Size</th>
+                                <th>Age</th>
+                                <th>Reward</th>
+                                <th>Creator</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div style="background-color: #eee; height: 1px; margin-top:20px; margin-bottom:20px;"></div>
+
+            <div class="ui stackable grid">
+
+                <div class="eight wide column">
+                    <div class="ui segments">
+                            <div class="ui segment">
+                                <h2 class="ui header">
+                                    <div class="content">
+                                        <span>Create a New Tribe</span>
+                                    </div>
+                                </h2>
+                                <form>
+                                    <div class="ui right labeled left icon input fluid large buy">
+                                      <i class="tag green icon"></i>
+                                      <input type="text" id="tribeName" placeholder="Max 32 Characters">
+                                      <div class="ui tag teal label notranslate">Name</div>
+                                    </div>
+                                    <br>
+                                    <div class="ui right labeled left icon input fluid large buy">
+                                      <i class="ethereum green icon"></i>
+                                      <input type="text" id="entryCost" placeholder="Min .001 ETC">
+                                      <div class="ui tag green label notranslate">ETC</div>
+                                    </div>
+                                <br/>
+                                
+                                <div class="ui right labeled left icon input fluid large buy">
+                                    <i class="users green icon"></i>
+                                    <input type="text" id="amountOfMembers" placeholder="Min. 2">
+                                    <div class="ui tag blue label notranslate">Members</div>
+                                </div>
+                                    
+                                    <div>
+                                        <span id="tribeAddress"></span>
+                                    </div>
+                                
+                                <a href="#" id="createTribe" class="ui large fluid green button" style="margin-top:10px;">
+                                    Create Tribe
+                                </a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="eight wide column">
+                    <div style="text-align: center">
+                        <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button">
+                            <i class="left discord icon"></i>
+                            Need help? Ask on our Discord. 
+                        </a>
+                    </div>
+                    <div class="ui segments">
+                        <div class="ui segment">
+                                <h4 style="">Q: How does this game work?</h4>
+                                <h4 style="text-align: left">
+                                    <p >The purpose of Tribes is to reduce risk in investing in Commonwealth. Invest as a tribe!</p>
+                                    <ul>
+                                        <li>When a tribe is created, each user puts ETC into the contract. The ETC can be refunded at any time.</li>
+                                        <li>Once the tribe is full, all ETC is used to buy into Commonwealth. P3C is spread equally among players. </li>
+                                        <li>Every user receives their P3C as well as a 3% bonus!</li>
+                                    </ul>
+                                </h4>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/semantic.min.js"></script>
+        <script src="lib/jquery.dataTables.min.js"></script>
+        <script src="lib/dataTables.responsive.min.js"></script>
+        <script src="lib/alertify.min.js"></script>
+        
+        <script src="js/util.js"></script>
+        <script src="js/etc/contracts.js"></script>
+        <script src="js/etc/tribes/tribe.js"></script>
+        <script src="js/etc/tribes/lobby.js"></script>
+
+        <script>
+            function refreshPrice() {
+                $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USDT', function (json) {
+                    var USETC = JSON.parse(JSON.stringify(json)).USDT;
+                    var price = (USETC).toFixed(2);
+                    $("#price").text(price)
+                });
+            }
+            setTimeout(function () {
+                refreshPrice()
+            }, 2000);
+            setInterval(function () {
+                refreshPrice() // this will run after every 5 seconds
+            }, 12000);
+    </script>
+    </body>
+
+</html>
