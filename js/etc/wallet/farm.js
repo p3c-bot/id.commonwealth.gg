@@ -22,13 +22,13 @@ function getMyCrop(onboard) {
             if (onboard == true && (result == '0x0000000000000000000000000000000000000000')) {
                 setTimeout(function () {
                     alertify.confirm(
-                        'Welcome to Commonwealth.gg!',
+                        'Selamat datang di Commonwealth!',
                         `
-                        <h1 id="loginWarning" class="login-warning">Login to Saturn wallet, and refresh!</h1>
+                        <h1 id="loginWarning" class="login-warning">Masuk mengunakan Dompet Saturnus/TrustWallet, dan segarkan!</h1>
                         <p id="agreement" class="agreement">
-                        Commonwealth is an Ethereum Classic app. Read it <a target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">here</a>. By continuing, you accept that the code will run as written, without guarantee of profit.
-                        To begin, click "Accept" and complete the transaction.
-                        </p>
+                        Commonwealth adalah aplikasi Ethereum Classic. Silakan Ba di <a target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>. Dengan melanjutkan, Anda menerima bahwa kode akan berjalan seperti tertulis, tanpa jaminan keuntungan. Untuk memulai,
+                        klik "Terima" dan selesaikan transaksi..
+                         </p>
                         <img id="loginLogo" src="img/logo/etc-title.jpg" class="ui image etc-logo center-larger" />
                         `,
                         //if ok deploy the crop
@@ -43,8 +43,8 @@ function getMyCrop(onboard) {
                             alertify.error('<h3>View Mode.</h3>')
                     }).set({
                         labels: {
-                            ok: 'Accept',
-                            cancel: 'Cancel'
+                            ok: 'Terima',
+                            cancel: 'Tolak'
                         }
                     });
                     //checks if web3 is loaded, but not logged in on saturn
@@ -65,7 +65,7 @@ function getMyCrop(onboard) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'RemoteFarmConnect'});};
                     myCropAddress = result;
                     if (getETCWallet == false){
-                        alertify.success('<h3>Turn on ETC Mode</h3>')
+                        alertify.success('<h3>Hidupkan Mode ETC Network</h3>')
                         getETCWallet = true;
                     }
                     localStorage.setItem(web3.eth.accounts[0], result)
@@ -88,9 +88,9 @@ function activateUI(cropAddress) {
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
 
     // This is where MN link is defined.
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '"https://commonwealth.gg/index.html?ref=' + myCropAddress + '</a>')
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '"https://id.commonwealth.gg/index.html?ref=' + myCropAddress + '</a>')
     // This definnes the clipboard button event for the referral link
-    $("#copyMNButton").attr("data-clipboard-text", 'https://commonwealth.gg/index.html?ref=' + myCropAddress);
+    $("#copyMNButton").attr("data-clipboard-text", 'https://id.commonwealth.gg/index.html?ref=' + myCropAddress);
 
     // Enable buttons
     $('#buy').prop("disabled", false);
@@ -198,10 +198,10 @@ function deployCrop(amountToBuy, referrer, selfBuy) {
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
                 if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'NewFarmDeploy'});};
-                alertify.success("Welcome to Commonwealth! Please wait 30 seconds for your crop to be created.")
+                alertify.success("Selamat datang di Commonwealth! Silakan tunggu kurang lebih 30 menit untuk memproses pembuatan alamat Crop anda.")
                 // playSound('register');
             } else {
-                alertify.error("New account declined. View mode.")
+                alertify.error("Akun Baru ditolak. Lihat Mode Network Anda.")
             }
         })
 }
@@ -277,7 +277,7 @@ function buyFromCrop(amountToBuy, referrer) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BuyP3C', 'value': Number(amountToBuy)});};
-                    alertify.success('<h3>' + amountToBuy + " ETC spent. Waiting for Blockchain.</h3>")
+                    alertify.success('<h3>' + amountToBuy + " ETC dihabiskan. Silakan menuggu Blockchain sedang diproses.</h3>")
                     // playSound('register');
                     $("#buy").transition({
                         animation: 'tada',
@@ -305,7 +305,7 @@ function sellFromCrop(amountToSell) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'SellP3C', 'value': amountToSell});};
-                    alertify.success('<h3>' + amountToSell + " Points Sold. Funds are sent to wallet as ETC.</h3>")
+                    alertify.success('<h3>' + amountToSell + " Point Terjual. Akan segerah dikirim ke Dompet sebagai ETC.</h3>")
                     // playSound('register');
                     $('#sellAmount').hide();
                 } else {
@@ -326,7 +326,7 @@ function reinvestFromCrop(referrer) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'Reinvest'});};
-                    alertify.success("<h3>Compounded Points. Waiting for Blockchain.</h3>")
+                    alertify.success("<h3>Reinvestasi Point. Menunggu Blockchain dan sedang di proses.</h3>")
                     // playSound('register');
                     console.log(result);
                 } else {
@@ -346,7 +346,7 @@ function withdrawFromCrop() {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'Withdraw'});};
-                    alertify.success("<h3>Withdrawing dividends to your ETC wallet.</h3>")
+                    alertify.success("<h3>Penarikan Dividend dikirim ke Dompet ETC.</h3>")
                     console.log(result);
                     // playSound('register');
                 } else {
@@ -369,7 +369,7 @@ function transferFromCrop(destination, amountToTransfer) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'Transfer'});};
-                    alertify.success("<h3>Transfering " + amountToTransfer + " Points to " + destination.substring(0, 7) + "...</h3>")
+                    alertify.success("<h3>Transfer " + amountToTransfer + " Point ke " + destination.substring(0, 7) + "...</h3>")
                     // playSound('register');
                     console.log(result);
                 } else {
