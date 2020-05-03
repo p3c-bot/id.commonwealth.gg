@@ -5,8 +5,8 @@ if (typeof web3 == 'undefined') {
     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Issue', 'event_category': 'NoWeb3'});};
     displayError(
         `
-        <div class="custom-computer only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">ETC Wallet</a></div>
-        <div class="mobile only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">ETC Wallet</a></div>
+        <div class="custom-computer only">Untuk Menggunakan, Instal sebuah <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">Dompet ETC</a></div>
+        <div class="mobile only">Untuk Menggunakan, Instal sebuah <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">Dompet ETC</a></div>
         `
     )
 }
@@ -16,8 +16,8 @@ getNetworkId(web3).then(function (res) {
         if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Issue', 'event_category': 'EthereumWeb3'});};        
         displayError(
             `
-            <div class="custom-computer only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">ETC Wallet</a></div>
-            <div class="mobile only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">ETC Wallet</a></div>
+            <div class="custom-computer only">Untuk Menggunakan, Instal sebuah <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">Dompet ETC</a></div>
+            <div class="mobile only">Untuk Menggunakan, Instal sebuah <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">Dompet ETC</a></div>
             `
         )
     } else {
@@ -76,7 +76,7 @@ $("#transfer").click(function () {
 
 $('#infoButton')
     .popup({
-        content: "Allow bots to compound your dividends in exchange for a referral bonus. You can manually withdraw at any time, but this must be on to use Compound. For greater control, use the Pure Interface.",
+        content: "Untuk menambah dividen Anda dengan imbalan bonus referensi Izinkan bot. Anda dapat menarik secara manual kapan saja, tetapi ini harus diaktifkan untuk menggunakannya. Untuk kontrol yang lebih besar, gunakan Pure Interface.",
         position: 'top center'
     });
 
@@ -96,15 +96,15 @@ function setPortfolio(cropAddress) {
             // (New Number - Original Number) ÷ Original Number × 100.
             $('#portfolioButton').show();
             performance = `
-            My account performance (in USD):
+            Kinerja akun saya (in USD):
             <br>
-            <b>Change 1 Day</b>: {usd1}
+            <b>Perubahan dalam 1 Hari</b>: {usd1}
             <br>
-            <b>Change 7 Days</b>: {usd7}
+            <b>Perubahan dalam 7 Hari</b>: {usd7}
             <br>
-            <b>Change 30 Days</b>: {usd30}
+            <b>Perubahan dalam 30 Hari</b>: {usd30}
             <br>
-            <span class="ui text small eleven converted">Past growth is no guarantee of future results.</span>
+            <span class="ui text small eleven converted">Pertumbuhan masa lalu bukan jaminan hasil di masa depan. </span>
             `
             $.each(data, function (key, val) {
                 if (key.includes('usd')) {
@@ -122,12 +122,12 @@ function setPortfolio(cropAddress) {
                 performance = performance.replace('{' + key + '}', '<span class="' + color + '">' + change + '%</span>')
                 if (color == "red" && key == 'usd7' && Math.abs(Number(change)) != 100){
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BalanceDown','value': Number(change)});};
-                    alertify.error('<h3>Balance: <u>' + change + '</u>% down in last 7 days.</h3>',5)
+                    alertify.error('<h3>Saldo: <u>' + change + '</u>% Turun dalam 7 Hari terakhir.</h3>',5)
                 }
 
                 if (color == "green" && key == 'usd7' && Number(change) != 100){
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BalanceUp','value': Number(change)});};
-                    alertify.success('<h3>Balance: <u>' + change + '</u>% up in last 7 days.</h3>',7)
+                    alertify.success('<h3>Saldo: <u>' + change + '</u>% Naik dalam 7 Hari terakhir.</h3>',7)
                 }
             });
             $('#portfolioButton').popup({
@@ -148,13 +148,13 @@ function copyAddress() {
 
 new ClipboardJS('.button');
 $('.ui.primary.basic.button.copy').on('click', function (){
-  alertify.success('<h3>Copied</h3>', 2)
+  alertify.success('<h3>Disalin.</h3>', 2)
 })
 
 $('#copyMNButton').on('click', function (){
     var address = document.getElementById("myCropAddress")
     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'GenerateReferral', 'value': address});};
-    alertify.success('<h3>Referral Link Copied</h3>', 2)
+    alertify.success('<h3>Link Referal di salin</h3>', 2)
 })
 
 $(".home").click(function(){
