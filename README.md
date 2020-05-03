@@ -14,7 +14,7 @@ https://ipfs.io/ipfs/QmZxod99m4vL8acqLFRPX4wF1ZpGrLNsLLj8vPZQ3yAwKZ
 
 ## Information
 
-Commonwealth is an open-source project and can be listed on any exchange without permission. It is also experimental software and is released to run on Ethereum Classic (ETC), a platform where code is law.
+Commonwealth adalah proyek sumber terbuka dan dapat dicantumkan pada pertukaran apa pun tanpa izin. Ini juga merupakan perangkat lunak eksperimental dan dirilis untuk dijalankan pada Ethereum Classic (ETC), sebuah platform di mana kode adalah hukum.
 
 ![ETC](/img/logo/etc-title.jpg)
 
@@ -26,7 +26,7 @@ Blockchain: Ethereum Classic (ETC)
 
 Smart Contract: 0xDe6FB6a5adbe6415CDaF143F8d90Eb01883e42ac
 
-Current Supply: Variable, can be queried from smart contract
+Pasokan Saat Ini: Variabel, dapat ditanyakan dari kontrak pintar
 
 Max Supply: 204,939,006 (assuming all ETC possible is in contract)
 
