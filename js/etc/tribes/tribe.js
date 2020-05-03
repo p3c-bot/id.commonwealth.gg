@@ -84,7 +84,7 @@ function getTribeDetails(tribe) {
     });
     
     new ClipboardJS('.button');
-    $("#copyTribeButton").attr("data-clipboard-text", 'https://commonwealth.gg/tribe.html?id=' + tribeID + "#");
+    $("#copyTribeButton").attr("data-clipboard-text", 'https://id.commonwealth.gg/tribe.html?id=' + tribeID + "#");
 }
 
 var amount;
@@ -107,7 +107,7 @@ $("#createTribe").click(function () {
     if (entryCost != 0 && amountOfMembers > 1 && name.length < 32){
         createTribe(name, amountOfMembers, entryCost)
     } else {
-        alertify.error("Please create a tribe with more than 1 Member.")
+        alertify.error("Silakan membuat Tribe lebih dari 1 Member.")
     }
 })
 
@@ -168,7 +168,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
                 });
                 console.log(JSON.stringify(data))
 
-                newTribeLink = 'https://commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
+                newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
                 $('#tribeAddress').innerHTML = 'Tribe Created. ID is ' + result.toString()
                 tribeCreatedAlert()
                 setTimeout(function () {
@@ -179,7 +179,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
             }
         }
     )
-    // window.location.replace('https://commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
+    // window.location.replace('https://id.commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
 }
 
 function buyIn(tribe,activeTribeCost) {
@@ -249,16 +249,16 @@ function loadLocation(address){
 $('#copyTribeButton').on('click', function (){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Copied'});};
     var tribe = document.getElementById("createTribe")
-    alertify.success('<h3>Tribe Link Copied</h3>', 2)
+    alertify.success('<h3>Link Tribe Disalin</h3>', 2)
 })
 
 function expiredTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Expired'});};
-    alertify.error("Expired Tribe. Please go to a valid tribe.")
-    alertify.alert("Expired Tribe",
+    alertify.error("Tribe Kadaluarsa. Silakan pergi ke tribe yang tersedia.")
+    alertify.alert("Tribe Kadaluarsa",
     `
     <h2 style="text-align:center;">
-    This tribe is either expired or does not exist yet! Click OK to go back.
+    Tribe sudah kadaluarsa silakan membuat atau pergi ke yang baru! Click OK dan kembali.
     </h2>
     <img id="loginLogo" src="img/tribes/group.png" class="ui image etc-logo center-larger" />
     `,
@@ -267,12 +267,12 @@ function expiredTribeAlert(){
 }
 function joinTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Joined'});};
-    alertify.success("Joining now! Reward will be " + tribeReward + " P3C")
+    alertify.success("Bergabung sekarang! Untuk reward " + tribeReward + " P3C")
     alertify.alert(
-    "Joining In",                        
+    "Bergabung",                        
     `
     <h2 style="text-align:center;">
-    Success! You are in the tribe and waiting for more members to join.
+    Berhasil! Anda di Tribe Dan menunggu suku lain untuk bergabung.
     </h2>
     <img id="loginLogo" src="img/tribes/piggy.gif" class="ui image etc-logo center-larger" />
     `
@@ -282,16 +282,16 @@ function joinTribeAlert(){
 
 function succesfulTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Filled'});};
-    alertify.success("Success! Reward " + tribeReward + " P3C")
+    alertify.success("Berhasil! Hadiah " + tribeReward + " P3C")
     alertify.alert(
-    "Reward Completed",                        
+    "Hadiah Selesai",                        
     `
     <h2 style="text-align:center;">
-    Success! Click OK to go back to your wallet and see your reward.
+    Berhasil! Klick OK dan kembali ke Dompet anda untuk melihat hadiah.
     </h2>
     <video class="ui image etc-logo center-larger" autoplay>
     <source src="img/tribes/chest.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    Browse anda tidak support dengan video.
     </video>`,
     function() {window.location.href = "/use.html"}
     )
@@ -300,7 +300,7 @@ function succesfulTribeAlert(){
 function tribeCreatedAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Created', 'value': address});};
     
-    newTribeLink = 'https://commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
+    newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
     const el = document.createElement('textarea');
     el.value = newTribeLink;
     el.setAttribute('readonly', '');
@@ -311,11 +311,11 @@ function tribeCreatedAlert(){
     document.execCommand('copy');
     document.body.removeChild(el);
 
-    alertify.success("Creating Tribe - Waiting for Blockchain. You will be redirected.")    
+    alertify.success("Pembuatan Tribe - Menunggu proses dari Blockchain. Anda akan di alihkan segera")    
     alertify.alert("Tribe Created",
     `
     <h2 style="text-align:center;">
-    New Tribe has been created and link is copied! Page will redirect in 20 seconds. 
+    Tribe yang baru telah dibuat dan salin link! akan dialihkan dalam waktu 20 detik. 
     </h2>
     <img id="loginLogo" src="img/tribes/fire.gif" class="ui image etc-logo" />
     `,
