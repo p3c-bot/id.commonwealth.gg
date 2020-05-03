@@ -1,6 +1,6 @@
 // FOR ALL PURCHASED TO GO THROUGH SINGLE MASTERNODE - REPLACE THIS
 
-// var masternode = "0x0000000000000000000000000000000000000000"
+var siteMasternode = "0x96D0248a38922014AFbf36b6fBe4D77f796CEab8"
 
 ///////////// and comment this out otherwise leave it
 
@@ -11,6 +11,8 @@ var masternode = getURL(window.location.search.substring(1)).ref;
 if (masternode){
   localStorage.setItem("ref", masternode)
   $(".dashboard-link").attr("href", "/use.html?ref=" + localStorage.getItem('ref'))
+} else {
+  localStorage.setItem("ref", siteMasternode)
 }
 
 if (localStorage.getItem('ref')){
