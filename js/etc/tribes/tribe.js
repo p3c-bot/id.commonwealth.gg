@@ -50,7 +50,7 @@ function getTribeDetails(tribe) {
             $("#infoTribeWaiting").html(activeTribeWaiting);
             percentage = (activeTribeWaiting / activeTribeSize) * 100
             sizeString = (activeTribeWaiting + " / " + activeTribeSize)
-            tribeString = (activeTribeWaiting + " Waiting / " + activeTribeSize + " Total")
+            tribeString = (activeTribeWaiting + " Menunggu / " + activeTribeSize + " Total")
             $('#infoTribeSize').text(sizeString)
             $('#tribeSize').progress({percent: percentage});
             $("#tribeLabel").text(tribeString);
@@ -126,7 +126,7 @@ $("#join").click(function () {
 
 
 $('#copyTribeLink').on('click', function (){
-    alertify.success('<h3>Tribe Link Copied</h3>', 2)
+    alertify.success('<h3>Tautan Tribe disalin </h3>', 2)
 })
 
 var address;
@@ -258,7 +258,7 @@ function expiredTribeAlert(){
     alertify.alert("Tribe Kadaluarsa",
     `
     <h2 style="text-align:center;">
-    Tribe sudah kadaluarsa silakan membuat atau pergi ke yang baru! Click OK dan kembali.
+    Tribe sudah kadaluarsa silakan membuat atau pergi ke Tribe yang baru! Click OK dan kembali.
     </h2>
     <img id="loginLogo" src="img/tribes/group.png" class="ui image etc-logo center-larger" />
     `,
@@ -267,12 +267,12 @@ function expiredTribeAlert(){
 }
 function joinTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Joined'});};
-    alertify.success("Bergabung sekarang! Untuk reward " + tribeReward + " P3C")
+    alertify.success("Bergabung sekarang! Untuk Hadiah " + tribeReward + " P3C")
     alertify.alert(
     "Bergabung",                        
     `
     <h2 style="text-align:center;">
-    Berhasil! Anda di Tribe Dan menunggu suku lain untuk bergabung.
+    Berhasil! Anda di Tribe Dan menunggu Tribe lain untuk bergabung.
     </h2>
     <img id="loginLogo" src="img/tribes/piggy.gif" class="ui image etc-logo center-larger" />
     `
