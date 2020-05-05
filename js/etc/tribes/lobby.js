@@ -22,9 +22,9 @@ $.getJSON("https://api.p3c.io/tribes/list", function (json) {
         data: 'players',
         render: function (data, type, row) {
           if (data.includes(playerAddress)){
-            return "✅"
+            return "✔️"
           } else {
-            return "⭕"
+            return "🔘"
           }
         }
       },
