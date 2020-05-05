@@ -26,7 +26,7 @@ function getMyCrop(onboard) {
                         `
                         <h1 id="loginWarning" class="login-warning">Masuk mengunakan Dompet Saturnus/TrustWallet, dan segarkan!</h1>
                         <p id="agreement" class="agreement">
-                        Commonwealth adalah aplikasi Ethereum Classic. Silakan Ba di <a target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>. Dengan melanjutkan, Anda menerima bahwa kode akan berjalan seperti tertulis, tanpa jaminan keuntungan. Untuk memulai,
+                        Commonwealth adalah aplikasi Ethereum Classic. Silakan Baca di <a target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>. Dengan melanjutkan, Anda menerima bahwa kode akan berjalan seperti tertulis, tanpa jaminan keuntungan. Untuk memulai,
                         klik "Terima" dan selesaikan transaksi..
                          </p>
                         <img id="loginLogo" src="img/logo/etc-title.jpg" class="ui image etc-logo center-larger" />
