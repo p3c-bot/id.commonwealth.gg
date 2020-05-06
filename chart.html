@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -141,20 +140,33 @@
                         </div>
                 </div>
             </div>
-            <div class="ui masthead vertical center aligned segment"  style="margin-top: 5px;">
-                    <div class="ui segment" style="padding-bottom: 5px;">
-                    <h4 class="ui header" style="text-align: left;">
-                        <b>Point Price</b><span class="ui green text small">&nbsp;| Updated Daily</span>
-                    </h4>
-                    <svg id="container"></svg>
-                    <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px; ">(More Data Available at Xenobank.com)</a>
+             <div class="ui masthead vertical center aligned segment" style="margin-top: 5px;">
+             <div class="ui segment" style="padding-bottom: 5px; padding-right: 0px; padding-left: 7px;">
+             <h4 class="ui header" style="text-align: left; margin-bottom: 5px;">
+             <div id="timeFrame" class="ui selection dropdown">
+             <input> <i class="dropdown icon"></i>
+             <div>
+             <b>Harga Point</b>
+             <span class="ui green text">&nbsp;| <span id="numDays">90 Hari</span></span>
+             </div>
+             <div class="menu">
+             <div class="item" data-value="30">30 Hari</div>
+             <div class="item" data-value="90">90 Hari</div>
+             <div class="item" data-value="180">6 Bulan</div>
+             <div class="item" data-value="365">1 Tahun</div>
+             <div class="item" data-value="100000">Semua</div>
+             </div>
+             </div>
+             </h4>
+             <svg id="container"></svg>
+             <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px; ">(More Data Available at Xenobank.com)</a>
             </div>
         </div>
         <div style="text-align:center; margin-bottom: 10px;">
             <a id="buyETCButton" class="ui left labeled icon large green button"
             style="margin-top: 15px; margin-bottom: 5px;">
             <i class="left ethereum icon"></i>
-                Need to buy ETC?
+                Perlu membeli ETC?
             </a>
         </div>
         <!-- TradingView Widget BEGIN -->
