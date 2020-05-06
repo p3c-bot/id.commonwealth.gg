@@ -2,8 +2,8 @@
 if (typeof web3 == 'undefined') {
     displayError(
         `
-        <div class="custom-computer only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">ETC Wallet</a></div>
-        <div class="mobile only">To Use, Install an <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">ETC Wallet</a></div>
+        <div class="custom-computer only">Perangkat anda harus Terinstall <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=TUD-w5P_uAA&feature=youtu.be">Dompet ETC</a></div>
+        <div class="mobile only">Perangkat anda harus Terinstall <a target="_blank" style="color: white; text-decoration: underline;" href="https://www.youtube.com/watch?v=xCyrjiF6f3E&feature=youtu.be">Dompet ETC</a></div>
         `
     )
 } else {
@@ -123,5 +123,5 @@ function copyAddress() {
 
 new ClipboardJS('.button');
 $('.ui.primary.basic.button.copy').on('click', function (){
-  alertify.success('Copied', 2)
+  alertify.success('Disalin', 2)
 })
