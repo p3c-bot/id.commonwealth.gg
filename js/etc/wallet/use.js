@@ -68,7 +68,7 @@ $("#transfer").click(function () {
         displayError('Invalid Address')
     }
     if (amountToTransfer > parseInt(web3.fromWei(myCropTokens))){
-        displayError('Not enough tokens.')
+        displayError('Token tidak sesuai.')
     } else {
         transferFromCrop(destination, amountToTransfer)
     }
