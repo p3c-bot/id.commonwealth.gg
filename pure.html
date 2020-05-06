@@ -5,30 +5,24 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@P3COfficial" />
     <meta name="twitter:title" content="Commonwealth" />
-    <meta name="twitter:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang Poin menerima pendapatan pasif saat sistem digunakan. Rencanakan masa depan dengan Commonwealth." />
+    <meta name="twitter:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang Poin menerima pendapatan pasif saat sistem digunakan. Buang bank Anda, pergi dengan P3C." />
     <meta name="twitter:image" content="https://commonwealth.gg/img/coin.png"/>
     <meta property="og:url" content="https://commonwealth.gg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Commonwealth" />
-    <meta property="og:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang Poin menerima pendapatan pasif saat sistem digunakan. Rencanakan masa depan dengan Commonwealth." />
+    <meta property="og:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang Poin menerima pendapatan pasif saat sistem digunakan. Buang bank Anda, pergi dengan P3C." />
     <meta property="og:image" content="https://commonwealth.gg/img/coin.png"/>
     <title>Commonwealth Pure</title>
     <meta charset="utf8">
     <meta name="description" content="The Commonwealth pure wallet interface. Useful for exchanges, developers, and merchants.">
     <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology,Savings Fund, P3C, Commonwealth.gg">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/lib/semantic.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/alertify.min.css" />
-    <!-- Default theme -->
-    <link rel="stylesheet" href="css/themes/default.min.css" />
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="css/themes/semantic.min.css" />
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="css/themes/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/lib/alertify.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="icon" type="image/png" href="img/etc.png">
+    <link rel="icon" type="image/png" href="img/logo/etc-future.png">
 </head>
 
 <body>
@@ -36,7 +30,7 @@
         <div class="ui container">
             <div class="header">
                 <a class="item" href="/">
-                    <img id="logo" src="img/etc-logo-alt.png" class="ui mini image" style="max-width: 15%" />
+                    <img id="logo" src="img/logo/etc-logo-earth.png" class="ui mini image" style="max-width: 15%" />
                     <h2 class="title" style="color: black;">Commonwealth Pure</h2>
                     <div class="opacity mobile only">
                         <strong>
@@ -85,7 +79,7 @@
                         <h2 class="ui header">
                             Saldo Saya
                             <div class="sub header pure-holdings">
-                                 <span id="myCropTokens"></span> Poin<span class="custom-computer only"> / <span id="myETCValue" class="notranslate" style="font-weight:bold;"></span> ETC</span>
+                                 <span id="myCropTokens"></span> Point<span class="custom-computer only"> / <span id="myETCValue" class="notranslate" style="font-weight:bold;"></span> ETC</span>
                             </div>
                         </h2>
                     </div>
@@ -100,18 +94,18 @@
                 </div>
                 <div class="ui two column centered grid">
                     <div class="column smallpad-left">
-                        <button id="reinvest" class="ui orange fluid button large" style="padding-left: 0px; padding-right: 0px;"><i class="recycle icon"></i>Reinves</button>
+                        <button id="reinvest" class="ui orange fluid button large" style="padding-left: 0px; padding-right: 0px;"><i class="recycle icon"></i>Reinvest Dividend</button>
                     </div>
                     <div class="column smallpad-right">
-                        <button id="withdraw" class="ui orange fluid button large"><i class="money bill alternate  icon"></i>Tarik Dana</button>
+                        <button id="withdraw" class="ui orange fluid button large"><i class="money bill alternate  icon"></i>Tarik Dividend</button>
                     </div>
                 </div>
                 <br>
-                <a href="https://flux.arcadium.network/">(Ingin lebih? Cobalah Flux Wallet)</a>
+                <a href="https://flux.arcadium.network/">(Ingin Lebih? Pergi ke Dompet Flux)</a>
             </div>
             <div class="four wide column buy" id="buyArea">
                 <h2 class="ui header">
-                    <img src="img/time-forward.svg" class="width one and eight" />
+                    <img src="img/wallet/time-forward.svg" class="width one and eight" />
                     <div class="content">
                         <span>Beli</span>
                     </div>
@@ -130,21 +124,21 @@
                 </div>
                 <div class="ui right labeled left icon input fluid large buy">
                     <i class="ethereum green icon"></i>
-                    <input placeholder="Jumlah ETC untuk membeli..." type="text" id="buyInput">
+                    <input placeholder="ETC dihabiskan..." type="text" id="buyInput">
                     <div class="ui tag green label notranslate">
                         ETC
                     </div>
                 </div>
                 <button id="buy" class="ui large fluid green button" style="margin-top:10px;">
-                    Beli Poin
+                    Beli Point
                 </button>
                 <div id="buyAmount" class="ui fluid large basic green button approx no click buy-amount">
-                    <i>Berapa yang akan Anda beli?</i>
+                    <i>Berapa yang ingin anda beli?</i>
                 </div>
             </div>
             <div class="four wide column sell">
                 <h2 class="ui header">
-                    <img src="img/time-backward.svg" class="width one and eight" />
+                    <img src="img/wallet/time-backward.svg" class="width one and eight" />
                     <div class="content">
                         <span>Jual</span>
                     </div>
@@ -165,16 +159,16 @@
 
                 <div class="ui right labeled left icon input fluid large">
                     <i class="tree blue icon"></i>
-                    <input placeholder="Jumlah Poin untuk dijual..." type="text" id="sellInput">
+                    <input placeholder="Points to Sell..." type="text" id="sellInput">
                     <span class="ui tag blue label">
-                        Poin
+                        Point
                     </span>
                 </div>
                 <button id="sell" class="ui large fluid blue button" style="margin-top:10px;">
-                    Jual Poin
+                    Jual Point
                 </button>
                 <div id="sellAmount" class="ui fluid large basic blue button no click approx" style="margin-top:10px;">
-                    <i>Berapa yang akan Anda jual?</i>
+                    <i>Berapa yang ingin anda Jual?</i>
                 </div>
             </div>
         </div>
@@ -186,18 +180,19 @@
                     <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button"
                         style="margin-bottom:10px;">
                         <i class="left discord icon"></i>
-                        Butuh bantuan? Obrolan sekarang.
+                        Butuh bantuan? Chat.
                     </a>
                 </div>
                 <div id="masternode" class="ui segments masternode hidden">
                     <div class="ui segment" style="text-align: left;">
-                        <p>Kunci API:
-                            <strong>33%</strong> dari biaya komunitas (3% dari total) untuk menautkan pembuat ketika Poin dibeli dengan tautan. <b>Harus memiliki 1 Poin agar aktif.</b> <a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank">Belajarlah lagi.</a>
+                        <p>Ref Link:
+                             <strong>33%</strong> dari biaya Commonwealth berlaku untuk perujuk ketika tautan digunakan 3% diberikan kepada perujuk.. 
+<a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank">Lihat disini.</a>
                         </p>
                     </div>
                     <div class="ui secondary segment">
                         <div class="link masternode">
-                            <a id="masternodeLink" href="/?ref=0x">https://commonwealth.gg/index.html?ref=0x123456</a> <button id="copyMNButton" class="ui primary basic button copy" data-clipboard-text="">
+                            <a id="masternodeLink" href="/?ref=0x">https://id.commonwealth.gg/index.html?ref=0x123456</a> <button id="copyMNButton" class="ui primary basic button copy" data-clipboard-text="">
                             <i class="copy icon"></i>
                             </button>
                         </div>
@@ -207,14 +202,14 @@
                     <a id="rainMaker" class="ui left labeled icon large fluid white button"
                         style="margin-bottom:10px;">
                         <i class="left chart line icon"></i>
-                        Aktifkan RainMaker <span class="ui green text small eleven">|  <span id="rainMakerTokens"></span> Poin / Divs: <span id="rainMakerDividends"></span> ETC</span>
+                        Aktifkan RainMaker <span class="ui green text small eleven">|  <span id="rainMakerTokens"></span> Point / Divs: <span id="rainMakerDividends"></span> ETC</span>
                     </a>
                 </div>
                 <div style="text-align: center">
                     <a id="distribute" class="ui left labeled icon large fluid white button"
                         style="margin-bottom:10px;">
                         <i class="left sitemap icon"></i>
-                        Split Divies <span class="ui green text small eleven">|  <span id="diviesBalance"></span> ETC</span> 
+                        Restribusi Divis <span class="ui green text small eleven">|  <span id="diviesBalance"></span> ETC</span> 
                     </a>
                 </div>
             </div>
@@ -224,7 +219,7 @@
                                 <h4 class="ui header">
                                     <i class="circular inverted orange exchange alternate icon"></i>
                                     <div class="content">
-                                        <div class="sub header"><b>Transfer Poin</b>. <i>Kirim ke alamat ETC lain atau alamat Crop.</i></div>
+                                        <div class="sub header"><b>Kirim Point</b>. <i>Ke alamat Crop atau alamat ETC .</i></div>
                                     </div>
                                 </h4>
                             </div>
@@ -237,22 +232,22 @@
                             <div class="ui segment">
                                 <form class="ui form">
                                     <div class="field">
-                                        <input type="text" id="transferAddress" placeholder="         Alamat tujuan">
+                                        <input type="text" id="transferAddress" placeholder="         Isi alamat disini">
                                     </div>
                                 </form>
                             </div>
                             <div class="ui segment">
                                 <div class="ui right labeled left icon input fluid buy">
-                                    <input type="text" id="transferTokenCount" placeholder="Jumlah Poin">
+                                    <input type="text" id="transferTokenCount" placeholder="isi Point">
                                     <div class="ui tag orange label notranslate">
-                                        Points
+                                        Point
                                     </div>
                                 </div>
                             </div>
                             <div class="ui segment">
                                 <button id="transfer" class="ui right labeled large icon orange fluid button">
                                     <i class="right arrow icon"></i>
-                                    Transfer
+                                    Kirim
                                 </button>
                             </div>
                         </div>
@@ -268,7 +263,7 @@
                         <a class="item" href="/">Rumah</a>
                         <a class="dashboard-link item" href="/use.html">Dompet</a>
                         <a href="/chart.html" class="item">Grafik</a>
-                        <a href="/commonwealth.pdf" target="_blank" class="item">Kertas putih</a>
+                        <a href="/commonwealth.pdf" target="_blank" class="item">Kertas Putih</a>
                         <a href="https://github.com/p3c-bot/p3c-bot.github.io" target="_blank" class="item"><i class="github icon"></i>Github</a>
                     </div>
                 </div>
@@ -277,30 +272,32 @@
                         <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left discord icon"></i>Discord Chat</a>
                         <a href="https://twitter.com/commonwealthgg" target="_blank" class="item">Twitter</a>
                         <a href="https://medium.com/@masterhax/" target="_blank" class="item">Blog</a>
-                        
                         <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Smart Contract</a>
-                        <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Dokumen</a>
+                        <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Docs</a>
                     </div>
                 </div>
-                <div class="ten wide column">
-                    <div class="footer"><div style="font-size: 11px; padding: 10px 20px; line-height: 13px;"><span style="background: #428BCA; color: #fff; font-weight: bold;">&nbsp;PERHATIAN&nbsp;</span>Proyek ini bersifat eksperimental. Jangan kirim Koin dan Token apa pun selain Poin(P3C) ke alamat Crop anda, Karena anda bisa kehilangan <span class="notranslate">ETC</span> yang anda kirim. Dan tidak ada jaminan untuk <span class="notranslate">ETC</span> anda. Ini adalah teknologi yang sangat baru dan kami dengan hormat meminta siapa pun yang tidak memahami risiko yang melekat pada teknologi Blockchain untuk tidak berpartisipasi dalam Commonwealth. Untuk melihat kontrak berjalan di
-                         <a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>
-                        dan tidak dapat diubah. </div>Commonwealth &copy; 2018-2020 </div></div>
-    <script src="https://commonwealth.gg/js/jquery.min.js"></script>
-    <script src="https://commonwealth.gg/js/alertify.min.js"></script>
-    <script src="https://commonwealth.gg/js/semantic.min.js"></script>
-    <script src="https://commonwealth.gg/js/web3.min.js"></script>
-    <script src="https://commonwealth.gg/js/clipboard.min.js"></script>
-    <script src="https://commonwealth.gg/js/lodash.min.js"></script>
+                  <div class="ten wide column">
+				<div class="footer"><div style="font-size: 11px; padding: 10px 20px; line-height: 13px;"><span style="background: #428BCA; color: #fff; font-weight: bold;">&nbsp;PERHATIAN&nbsp;</span>Proyek ini bersifat eksperimental. Jangan kirim Koin dan Token apa pun selain Poin(P3C) ke alamat Crop anda, Karena anda bisa kehilangan <span class="notranslate">ETC</span> yang anda kirim. Dan tidak ada jaminan untuk <span class="notranslate">ETC</span> anda. Ini adalah teknologi yang sangat baru dan kami dengan hormat meminta siapa pun yang tidak memahami risiko yang melekat pada teknologi Blockchain untuk tidak berpartisipasi dalam Commonwealth. Untuk melihat kontrak berjalan di
+					<a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>
+					dan tidak dapat diubah. </div>Commonwealth &copy; 2018-2020 </div></div>
+			  
+                </div>
+            </div>
+        </div>
+            
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/alertify.min.js"></script>
+    <script src="lib/semantic.min.js"></script>
+    <script src="lib/web3.min.js"></script>
+    <script src="lib/clipboard.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
 
-    <script src="https://commonwealth.gg/lib/util.js"></script>
-    <script src="https://commonwealth.gg/lib/contracts.js"></script>
-    <script src="https://commonwealth.gg/lib/pure/pure.js"></script>
-    <script src="https://commonwealth.gg/lib/pure/rainmaker.js"></script>
-    <script src="https://commonwealth.gg/lib/masternode.js"></script>
-    <script src="https://commonwealth.gg/lib/pure/use.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/etc/contracts.js"></script>
+    <script src="js/etc/pure/pure.js"></script>
+    <script src="js/etc/pure/rainmaker.js"></script>
+    <script src="js/etc/wallet/masternode.js"></script>
+    <script src="js/etc/pure/use.js"></script>
 </body>
-<source src="/doc-assets/register.mp3" type="audio/mpeg">
-<div id="sound"></div>
 
 </html>
