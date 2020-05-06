@@ -14,9 +14,9 @@ function getMyCrop() {
     setTimeout(function () {
         //checks if web3 is loaded, but not logged in on saturn
         if (web3.eth.accounts[0] === undefined) { 
-            alertify.error('Not connected to Commonwealth.')
+            alertify.error('Tidak terhubung dengan Commonwealth.')
         } else {
-            alertify.success('Connected to Commonwealth.')
+            alertify.success('Terhubung dengan Commonwealth.')
         }
     }, 1000)
     myCropAddress = web3.toChecksumAddress(web3.eth.accounts[0])
@@ -29,8 +29,8 @@ function activateUI(cropAddress) {
     // Address and links 
     $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">https://commonwealth.gg/index.html?ref=' + myCropAddress + '</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://commonwealth.gg/index.html?ref=' + myCropAddress);
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">https://id.commonwealth.gg/index.html?ref=' + myCropAddress + '</a>')
+    $("#copyMNButton").attr("data-clipboard-text", 'https://id.commonwealth.gg/index.html?ref=' + myCropAddress);
 
     // Enable buttons
     $('#buy').prop("disabled", false);
@@ -113,7 +113,7 @@ function buyFromCrop(amountToBuy, referrer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success(amountToBuy + " ETC spent. Waiting for Blockchain.")
+                alertify.success(amountToBuy + " ETC dikonfirmasi menunggu Blockchain.")
             } else {
                 console.log(error);
             }
@@ -134,7 +134,7 @@ function sellFromCrop(amountToSell) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success(amountToSell + " Points Sold. Waiting for Blockchain.")
+                alertify.success(amountToSell + " Point Terjual. menunggu konfirmasi Blockchain .")
                 console.log(result);
             } else {
                 console.log(error);
@@ -152,7 +152,7 @@ function reinvestFromCrop(referrer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Reinvested Points. Waiting for Blockchain.")
+                alertify.success("Reinvest Point. Menunggu Konfirmasi Blockchain.")
                 console.log(result);
             } else {
                 console.log(error);
@@ -168,7 +168,7 @@ function withdrawFromCrop() {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Withdrawing dividends to your ETC wallet.")
+                alertify.success("Penarikan dividend Ke dompet ETC anda.")
                 console.log(result);
             } else {
                 console.log(error);
@@ -188,7 +188,7 @@ function transferFromCrop(destination, amountToTransfer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Transferring " + amountToTransfer + " Points to " + destination.substring(0, 7) + "...")
+                alertify.success("Transferring " + amountToTransfer + " Point ke " + destination.substring(0, 7) + "...")
                 console.log(result);
             } else {
                 console.log(error);
