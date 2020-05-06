@@ -4,9 +4,9 @@ $('.ui.dropdown')
         onChange: function(value, text, $selectedItem) {
             drawChart(value)
             if (value == '100000'){
-                $('#numDays').text('Max')
+                $('#numDays').text('Semua')
             } else {
-                $('#numDays').text(value + ' Days')
+                $('#numDays').text(value + ' Hari')
             }
             if (typeof gtag !== 'undefined'){gtag('event', 'Home', {'event_label': 'Usage', 'event_category': 'ChangeRange'});};
         }
