@@ -30,7 +30,7 @@ $("#rainMaker").click(function () {
         function (error, result) {
             if (!error) {
                 console.log(result);
-                alertify.success("Activating Rainmaker.")
+                alertify.success("Mengaktifkan Rainmaker.")
             } else {
                 console.log(error);
             }
