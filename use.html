@@ -240,15 +240,15 @@
 
          <div class="ui stackable grid">
             <div class="eight wide column">
-                <div class="ui segment" style="padding-bottom: 5px; padding-right: 0px; padding-left: 7px;">
+                <div class="ui segment chart-window">
                     <h4 class="ui header" style="text-align: left; margin-bottom: 5px;">
-                        <div id="timeFrame" class="ui selection dropdown upward" tabindex="0">
+                        <div id="timeFrame" class="ui selection dropdown" style="font-size: .75em;">
                             <input>
                             <i class="dropdown icon"></i>
                             <div>
-                                <b> Harga Point</b><span class="ui green text">&nbsp;| <span id="numDays">90 Hari</span></span>
+                                <b>Price</b><span class="ui green text">&nbsp;| <span id="numDays">90 Hari</span></span>
                             </div>
-                            <div class="menu transition hidden" tabindex="-1" style="display: block !important;">
+                            <div class="menu">
                               <div class="item" data-value="30">30 Hari</div>
                               <div class="item" data-value="90">90 Hari</div>
                               <div class="item" data-value="180">6 Bulan</div>
@@ -382,7 +382,6 @@
     <script src="lib/clipboard.min.js"></script>
     <script src="lib/lodash.min.js"></script>
     <script src="lib/d3.v5.min.js"></script>
-
     <script src="js/util.js"></script>
     <script src="js/etc/contracts.js"></script>
     <script src="js/etc/wallet/farm.js"></script>
