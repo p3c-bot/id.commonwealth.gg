@@ -4,9 +4,9 @@ $('.ui.dropdown')
         onChange: function(value, text, $selectedItem) {
             drawChart(value)
             if (value == '100000'){
-                $('#numDays').text('Semua')
+                $('#numDays').text('Max')
             } else {
-                $('#numDays').text(value + ' Hari')
+                $('#numDays').text(value + ' Days')
             }
             if (typeof gtag !== 'undefined'){gtag('event', 'Rumah', {'event_label': 'Usage', 'event_category': 'ChangeRange'});};
         }
@@ -14,9 +14,9 @@ $('.ui.dropdown')
 ;
 
 
-function drawChart(hari) {
+function drawChart(days) {
     d3.selectAll("svg > *").remove();
-    d3.json("https://api.commonwealth.gg/chart/ohlc/" + hari).then(function (prices) {
+    d3.json("https://api.commonwealth.gg/chart/ohlc/" + days).then(function (prices) {
 
         const months = {
             0: 'Jan',
