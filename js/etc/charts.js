@@ -14,9 +14,9 @@ $('.ui.dropdown')
 ;
 
 
-function drawChart(days) {
+function drawChart(hari) {
     d3.selectAll("svg > *").remove();
-    d3.json("https://api.commonwealth.gg/chart/ohlc/" + days).then(function (prices) {
+    d3.json("https://api.commonwealth.gg/chart/ohlc/" + hari).then(function (prices) {
 
         const months = {
             0: 'Jan',
