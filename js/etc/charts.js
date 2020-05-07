@@ -1,12 +1,12 @@
 $('.ui.dropdown')
     .dropdown({
-        action: 'hide',
+        
         onChange: function(value, text, $selectedItem) {
             drawChart(value)
             if (value == '100000'){
                 $('#numDays').text('Max')
             } else {
-                $('#numDays').text(value + ' Days')
+                $('#numDays').text(value + ' Hari')
             }
             if (typeof gtag !== 'undefined'){gtag('event', 'Home', {'event_label': 'Usage', 'event_category': 'ChangeRange'});};
         }
