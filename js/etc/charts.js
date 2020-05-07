@@ -8,7 +8,7 @@ $('.ui.dropdown')
             } else {
                 $('#numDays').text(value + ' Hari')
             }
-            if (typeof gtag !== 'undefined'){gtag('event', 'Home', {'event_label': 'Usage', 'event_category': 'ChangeRange'});};
+            if (typeof gtag !== 'undefined'){gtag('event', 'Rumah', {'event_label': 'Usage', 'event_category': 'ChangeRange'});};
         }
     });
 ;
