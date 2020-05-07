@@ -4,7 +4,7 @@ body {
 
 .cityscape {
     /* The image used */
-    background-image: url("/img/landing/planet.jpeg");
+    background-image: url("/img/landing/planet.jpg");
 
     /* Full height */
     height: 0%;
@@ -20,7 +20,7 @@ body {
 }
 
 .chart-background {
-    background-image: linear-gradient(#56B4D3, rgb(34, 94, 52));
+    background-image: linear-gradient(#56B4D3, rgb(34, 94, 52,.3));
 }
 
 /* Position text in the middle of the page/image */
@@ -574,11 +574,18 @@ i.blue.icon {
  
  .axis text {
      font-family: 'Open Sans', sans-serif;
-     font-size: 17px;
+     font-size: 17.8px;
      fill: black;
  }
- 
+
  /* d3 candle stick end */
+ 
+ .chart-window {
+    padding-bottom: 5px !important; 
+    padding-right: 0px !important; 
+    padding-left: 7px !important; 
+    padding-top: 5px !important;
+ }
  
  body {
    background-color: white;
