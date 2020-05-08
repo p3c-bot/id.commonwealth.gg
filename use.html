@@ -298,10 +298,16 @@
                                 </h4>
                             </div>
                             <div class="ui segment notranslate">
-                                <b>Crop Saya:</b> <span id="myCropAddress" class="approx"></span> <button id="copyAddressButton"
-                                    class="ui primary basic button copy" data-clipboard-text="">
-                                    <i class="copy icon"></i>
+                                <button id="myBtn" >My Crop</button>
+                                <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <img id="barcode" src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=Hello%20world&amp;choe=UTF-8" class="modal" alt="Your Crop Address as a QR Code"><br /> 
+                                <b>Crop Saya:</b> <span id="myCropAddress" class="approx"></span> 
+                                <button id="copyAddressButton" class="ui primary basic button copy" data-clipboard-text="">
+                                <i class="copy icon"></i>
                                 </button>
+                            </div>
                             </div>
                             <div class="ui segment">
                                 <form class="ui form">
