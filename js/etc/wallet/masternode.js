@@ -17,3 +17,4 @@ if (masternode){
 if (localStorage.getItem('ref')){
   if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'UsingRefAddress', 'value': localStorage.getItem('ref')});};
 }
+
