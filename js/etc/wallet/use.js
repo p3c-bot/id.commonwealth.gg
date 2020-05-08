@@ -161,5 +161,6 @@ $(".home").click(function(){
     window.location.href = "/";
 });
 
+$("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=350x350&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="rcAll" />');
 
-$("#barcode").replaceWith('<img src="https://chart.googleapis.com/chart?chs=200x200&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" class="modal" />');
+
