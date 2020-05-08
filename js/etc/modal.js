@@ -26,3 +26,6 @@ window.onclick = function(event) {
   }
 }
 
+$(document).ready(function(){
+      $(".preloader").fadeOut();
+    })
