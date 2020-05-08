@@ -1,4 +1,7 @@
 
+$(document).ready(function(){
+$(".preloader").fadeOut();
+})
 
 // Get the modal
 var modal = document.getElementById("myModal");
