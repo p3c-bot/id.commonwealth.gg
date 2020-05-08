@@ -93,6 +93,8 @@ function activateUI(cropAddress) {
     $("#copyMNButton").attr("data-clipboard-text", 'https://id.commonwealth.gg/index.html?ref=' + myCropAddress);
     $("#qrImage").replaceWith('<img src="https://chart.googleapis.com/chart?chs=180x180&amp;cht=qr&amp;chl=' + myCropAddress + '&amp;choe=UTF-8" />');
 
+
+
     // Enable buttons
     $('#buy').prop("disabled", false);
     $('#sell').prop("disabled", false);
@@ -108,6 +110,8 @@ function disableUI() {
     $('#withdraw').prop("disabled", true);
     $('#transfer').prop("disabled", true);
 }
+
+
 
 
 function getMyCropDividends() {
