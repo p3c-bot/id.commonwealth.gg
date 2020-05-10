@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/qr.css">
     <link rel="icon" type="image/png" href="img/logo/whale.png">
     <!-- GA -->
     <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
@@ -332,7 +333,10 @@
                             <div class="ui segment">
                                 <form class="ui form">
                                     <div class="field">
-                                        <input type="text" id="transferAddress" placeholder="         Alamat Crop Tujuan">
+                                    <input type="text" id="transferAddress" placeholder="         Alamat Crop Tujuan" class=qrcode-text>
+                                    <label class=qrcode-text-btn >
+                                    <input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1>
+                                    </label><b><span>Scan QrCode</span></b>
                                     </div>
                                 </form>
                             </div>
@@ -417,5 +421,6 @@
     <script src="js/etc/wallet/use.js"></script>
     <script src="js/etc/modal.js"></script>
     <script src="js/etc/qrcode.js"></script>
+    <script src="js/etc/qr-scan.js"></script>
 </body>
 </html>
