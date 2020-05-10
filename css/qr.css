@@ -1,5 +1,5 @@
 body, input {font-size:14pt}
 input, button {vertical-align:middle}
 .qrcode-text {padding-right:1.7em; margin-right:0}
-<!--- .qrcode-text-btn {display:inline-block; background:url(//id.commonwealth.gg/img/qrcode.png) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer} -->
+.qrcode-text-btn {display:inline-block; background:url() 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer} 
 .qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
