@@ -74,6 +74,21 @@ $("#transfer").click(function () {
     }
 })
 
+
+$( "#transferAddress" ).on('input', function() {
+    console.log( "Handler for .keypress() called." );
+    destination = $("#transferAddress").val()
+    if (web3.isAddress(destination) == true){
+        cropAbi.at(destination).owner.call(function (err, owner) {
+            if (owner != "0x"){
+                alertify.success('Sending to a Crop')
+            } else {
+                alertify.warning('Destination is not a Crop') 
+            }
+        });
+    }
+});
+
 $('#infoButton')
     .popup({
         content: "Untuk menambah dividen Anda dengan imbalan bonus referensi Izinkan bot. Anda dapat menarik secara manual kapan saja, tetapi ini harus diaktifkan untuk menggunakannya. Untuk kontrol yang lebih besar, gunakan Pure Interface.",
