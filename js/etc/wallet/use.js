@@ -81,9 +81,9 @@ $( "#transferAddress" ).on('input', function() {
     if (web3.isAddress(destination) == true){
         cropAbi.at(destination).owner.call(function (err, owner) {
             if (owner != "0x"){
-                alertify.success('Sending to a Crop')
+                alertify.success('Mengirim ke Crop')
             } else {
-                alertify.warning('Destination is not a Crop') 
+                alertify.warning('Periksa kembali Crop anda') 
             }
         });
     }
