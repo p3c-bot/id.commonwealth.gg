@@ -55,7 +55,7 @@ $.getJSON("https://api.p3c.io/tribes/list", function (json) {
       {
         data: 'reward',
         render: function (data, type, row) {
-          return data + ' P3C'
+          return data + ' Point'
         }
       },
       {
