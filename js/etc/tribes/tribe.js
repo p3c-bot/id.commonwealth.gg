@@ -63,7 +63,7 @@ function getTribeDetails(tribe) {
         $("#infoTribeCost").html( prettyNumber + " ETC");
         $("#buttonTribeCost").html(" ("+ prettyNumber + " ETC)");
         tribeReward = Number(web3.fromWei(activeTribeCost / buyPrice)).toFixed(1)
-        $("#infoTribeReward").html( tribeReward + " P3C");
+        $("#infoTribeReward").html( tribeReward + " Point");
     }); 
 
     tribe.name.call(function (err, result) {
@@ -126,12 +126,16 @@ $("#join").click(function () {
 
 
 $('#copyTribeLink').on('click', function (){
-    alertify.success('<h3>Tautan Tribe disalin </h3>', 2)
+    alertify.success('<h3>Tautan Tribe disalin</h3>', 2)
 })
 
 var address;
 // CREATE GAME
 function createTribe(tribeName, amountOfMembers, entryCost) {
+    if (Number(tribeNumber) == null || Number((entryCost / buyPrice).toFixed(1) == null)){
+        alertify.error('Error: Silakan confirmasi Dompet anda dan Terkonesi dengan ETC')
+        return
+    } 
     amount = web3.toWei(entryCost)
     
     data = { 
@@ -168,7 +172,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
                 });
                 console.log(JSON.stringify(data))
 
-                newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
+                newTribeLink = 'https://commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
                 $('#tribeAddress').innerHTML = 'Tribe Created. ID is ' + result.toString()
                 tribeCreatedAlert()
                 setTimeout(function () {
@@ -179,7 +183,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
             }
         }
     )
-    // window.location.replace('https://id.commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
+    // window.location.replace('https://commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
 }
 
 function buyIn(tribe,activeTribeCost) {
@@ -192,19 +196,14 @@ function buyIn(tribe,activeTribeCost) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                if(activeTribeSize - activeTribeWaiting == 1){
-                    $.ajax({
-                        type: "GET",
-                        url: "https://api.commonwealth.gg/tribes/finished/" + tribeID,
-                        crossDomain: true,
-                    });
-                    succesfulTribeAlert()
-                } else {
-                    $.ajax({
+                $.ajax({
                         type: "GET",
                         url: "https://api.commonwealth.gg/tribes/join/" + tribeID + "/" + userAddress,
                         crossDomain: true,
-                    });
+                });
+                if(activeTribeSize - activeTribeWaiting == 1){
+                    succesfulTribeAlert()
+                } else {
                     joinTribeAlert()
                 }
             } else {
@@ -227,7 +226,7 @@ function refund(tribe){
                     url: "https://api.commonwealth.gg/tribes/leave/" + tribeID + "/" + userAddress,
                     crossDomain: true,
                 });
-                alertify.success(" Collecting Refund, please wait.")
+                alertify.success(" Pengembalian Dana, Silakan tunggu.")
             } else {
                 console.log(error);
             }
@@ -249,7 +248,7 @@ function loadLocation(address){
 $('#copyTribeButton').on('click', function (){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Copied'});};
     var tribe = document.getElementById("createTribe")
-    alertify.success('<h3>Link Tribe Disalin</h3>', 2)
+    alertify.success('<h3>Tautan Tribe disalin</h3>', 2)
 })
 
 function expiredTribeAlert(){
@@ -267,12 +266,12 @@ function expiredTribeAlert(){
 }
 function joinTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Joined'});};
-    alertify.success("Bergabung sekarang! Untuk Hadiah " + tribeReward + " P3C")
+    alertify.success("Bergabung sekarang! Untuk Hadiah " + tribeReward + " Point")
     alertify.alert(
-    "Bergabung",                        
+    "Joining In",                        
     `
     <h2 style="text-align:center;">
-    Berhasil! Anda di Tribe Dan menunggu Tribe lain untuk bergabung.
+    Berhasil! Anda sudah berada di Tribe Dan menunggu Tribe lain untuk bergabung.
     </h2>
     <img id="loginLogo" src="img/tribes/piggy.gif" class="ui image etc-logo center-larger" />
     `
@@ -282,7 +281,7 @@ function joinTribeAlert(){
 
 function succesfulTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Filled'});};
-    alertify.success("Berhasil! Hadiah " + tribeReward + " P3C")
+    alertify.success("Hadiah Berhasil " + tribeReward + " Point")
     alertify.alert(
     "Hadiah Selesai",                        
     `
@@ -300,7 +299,7 @@ function succesfulTribeAlert(){
 function tribeCreatedAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Created', 'value': address});};
     
-    newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
+    newTribeLink = 'https://commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
     const el = document.createElement('textarea');
     el.value = newTribeLink;
     el.setAttribute('readonly', '');
@@ -312,7 +311,7 @@ function tribeCreatedAlert(){
     document.body.removeChild(el);
 
     alertify.success("Pembuatan Tribe - Menunggu proses dari Blockchain. Anda akan di alihkan segera")    
-    alertify.alert("Tribe Created",
+    alertify.alert("Tribe Dibuat",
     `
     <h2 style="text-align:center;">
     Tribe yang baru telah dibuat dan salin link! akan dialihkan dalam waktu 20 detik. 
