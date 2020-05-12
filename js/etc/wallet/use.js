@@ -105,53 +105,6 @@ $( "#buyWithCoinbase" ).click(function() {
     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BuyWithCoinbase'});};
 });
 
-function setPortfolio(cropAddress) {
-    $.getJSON("https://api.commonwealth.gg/price/crop/" + web3.toChecksumAddress(cropAddress), function (data) {
-        if (data !== null){
-            // (New Number - Original Number) ÷ Original Number × 100.
-            $('#portfolioButton').show();
-            performance = `
-            Kinerja akun saya (in USD):
-            <br>
-            <b>Perubahan dalam 1 Hari</b>: {usd1}
-            <br>
-            <b>Perubahan dalam 7 Hari</b>: {usd7}
-            <br>
-            <b>Perubahan dalam 30 Hari</b>: {usd30}
-            <br>
-            <span class="ui text small eleven converted">Pertumbuhan masa lalu bukan jaminan hasil di masa depan. </span>
-            `
-            $.each(data, function (key, val) {
-                if (key.includes('usd')) {
-                    change = (((myUSDValue - val) / val) * 100).toFixed(0)
-                } else {
-                    change = (((myETCValue - val) / val) * 100).toFixed(1)
-                    change = String(change).replace('0.', '.')
-                }
-                color = (change >= 0) ? "green" : "red"
-                // TODO does this make sense?
-                // if (key == "usd1"){
-                //     $("#myDayChange").html("<span class='text small eleven'>  " + change + "%</span>")
-                //     $("#myDayChange").css("color", color)
-                // }
-                performance = performance.replace('{' + key + '}', '<span class="' + color + '">' + change + '%</span>')
-                if (color == "red" && key == 'usd7' && Math.abs(Number(change)) != 100){
-                    if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BalanceDown','value': Number(change)});};
-                    alertify.error('<h3>Saldo: <u>' + change + '</u>% Turun dalam 7 Hari terakhir.</h3>',5)
-                }
-
-                if (color == "green" && key == 'usd7' && Number(change) != 100){
-                    if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BalanceUp','value': Number(change)});};
-                    alertify.success('<h3>Saldo: <u>' + change + '</u>% Naik dalam 7 Hari terakhir.</h3>',7)
-                }
-            });
-            $('#portfolioButton').popup({
-                html: performance,
-                position: 'right center'
-            });
-        }
-    });
-}
 
 function copyAddress() {
     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'CopyAddress'});};
@@ -175,5 +128,4 @@ $('#copyMNButton').on('click', function (){
 $(".home").click(function(){
     window.location.href = "/";
 });
-
 
