@@ -56,7 +56,7 @@ function setDividendsPrice(idrPrice){
   myDividendUSDValue = value.toFixed(5)
 }
 
-function updateEtcPrice(portfolio) {
+function updateEtcPrice() {
   $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=IDR', function (result) {
     if (result !== null){
       var idr = result.IDR
@@ -67,19 +67,17 @@ function updateEtcPrice(portfolio) {
 
       setTokensPrice(idrPrice)
       setDividendsPrice(idrPrice)
-      if (portfolio === true){
-        setPortfolio(myCropAddress)
-      }
+      
     }
   })
 }
 
 // get the etc price after 1.5s, and then every 10s
 setTimeout(function(){
-  updateEtcPrice(true)
+  updateEtcPrice()
 }, 1400);
 setInterval(function(){
-  updateEtcPrice(false)
+  updateEtcPrice()
 }, 8000);
 
 $('#buyInput').on('input change', function () {
