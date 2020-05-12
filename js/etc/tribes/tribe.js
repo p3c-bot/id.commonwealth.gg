@@ -172,7 +172,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
                 });
                 console.log(JSON.stringify(data))
 
-                newTribeLink = 'https://commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
+                newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
                 $('#tribeAddress').innerHTML = 'Tribe Created. ID is ' + result.toString()
                 tribeCreatedAlert()
                 setTimeout(function () {
@@ -183,7 +183,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
             }
         }
     )
-    // window.location.replace('https://commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
+    // window.location.replace('https://id.commonwealth.gg/nodefornode.html?tribe=' + (int(tribeID) + 1) + '?');
 }
 
 function buyIn(tribe,activeTribeCost) {
@@ -299,7 +299,7 @@ function succesfulTribeAlert(){
 function tribeCreatedAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Created', 'value': address});};
     
-    newTribeLink = 'https://commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
+    newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
     const el = document.createElement('textarea');
     el.value = newTribeLink;
     el.setAttribute('readonly', '');
