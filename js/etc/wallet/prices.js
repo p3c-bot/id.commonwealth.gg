@@ -24,7 +24,7 @@ var sellPrice;
 function setSellPrice(idrPrice) {
   p3cContract.sellPrice(function (e, r) {
     sellPrice = web3.fromWei(r)
-    $('#tokenSellGet').text(sellPrice.toFixed(4) + ' ETC')
+    $('#tokenSellGet').text(sellPrice.toFixed(3) + ' ETC')
     $('#tokenUSDSellPrice').text('IDR' + (sellPrice * idrPrice).toFixed(2))
   })
 }
@@ -35,7 +35,7 @@ function setBuyPrice(idrPrice) {
   p3cContract.buyPrice(function (e, r) {
     buyPrice = web3.fromWei(r)
     // alert((buyPrice * idrPrice).toFixed(2))
-    $('#tokenBuyGet').text(buyPrice.toFixed(4) + ' ETC')
+    $('#tokenBuyGet').text(buyPrice.toFixed(3) + ' ETC')
     $('#tokenUSDBuyPrice').text('IDR' + (buyPrice * idrPrice).toFixed(2))
   })
 }
@@ -77,10 +77,10 @@ function updateEtcPrice(portfolio) {
 // get the etc price after 1.5s, and then every 10s
 setTimeout(function(){
   updateEtcPrice(true)
-}, 1700);
+}, 1400);
 setInterval(function(){
   updateEtcPrice(false)
-}, 10000);
+}, 8000);
 
 $('#buyInput').on('input change', function () {
   var value = parseFloat($(this).val())
