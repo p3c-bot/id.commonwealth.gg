@@ -40,7 +40,7 @@ function getMyCrop(onboard) {
                         function () {
                             if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'NewFarmDisagree'});};
                             alertify.defaults.notifier.delay = 10000
-                            alertify.error('<h3>View Mode.</h3>')
+                            alertify.error('<h3>Lihat mode Network anda.</h3>')
                     }).set({
                         labels: {
                             ok: 'Terima',
@@ -217,7 +217,7 @@ function transferAllP3CToCrop() {
         alert('This is my crop ' + cropAddress)
         p3cContract.myTokens.call(function (err, myTokens) {
             tokens = myTokens.toNumber()
-            alert('Move this many tokens' + web3.fromWei(tokens))
+            alert('Pindahkan token sebanyak ini' + web3.fromWei(tokens))
             p3cContract.transfer.sendTransaction(
                 cropAddress,
                 tokens, {
@@ -249,7 +249,7 @@ function autoReinvestDisableToggle(state) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'AutoInvestToggle'});};
-                    alertify.success("Auto-Reinvest turned to " + !(state))
+                    alertify.success("Automatis Reinvest beralih ke " + !(state))
                     // playSound('register');
                     $('#reinvest').prop("disabled", true);
                 } else {
@@ -283,7 +283,7 @@ function buyFromCrop(amountToBuy, referrer) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BuyP3C', 'value': Number(amountToBuy)});};
-                    alertify.success('<h3>' + amountToBuy + " ETC dihabiskan. Silakan menuggu Blockchain sedang diproses.</h3>")
+                    alertify.success('<h3>' + amountToBuy + " ETC dihabiskan. Silakan tunggu transaksi Blockchain sedang memproses.</h3>")
                     // playSound('register');
                     $("#buy").transition({
                         animation: 'tada',
@@ -332,7 +332,7 @@ function reinvestFromCrop(referrer) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'Reinvest'});};
-                    alertify.success("<h3>Reinvestasi Point. Menunggu Blockchain dan sedang di proses.</h3>")
+                    alertify.success("<h3>Reinvestasi Point. Silakan tunggu transaksi Blockchain sedang memproses.</h3>")
                     // playSound('register');
                     console.log(result);
                 } else {
