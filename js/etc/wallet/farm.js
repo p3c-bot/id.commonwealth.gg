@@ -311,7 +311,7 @@ function sellFromCrop(amountToSell) {
             function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'SellP3C', 'value': amountToSell});};
-                    alertify.success('<h3>' + amountToSell + " Point Terjual. Akan segerah dikirim ke Dompet sebagai ETC.</h3>")
+                    alertify.success('<h3>' + amountToSell + " Point Terjual. Akan segera dikirim ke Dompet sebagai ETC.</h3>")
                     // playSound('register');
                     $('#sellAmount').hide();
                 } else {
