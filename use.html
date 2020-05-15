@@ -269,78 +269,70 @@
                         <svg id="container"></svg>
                         <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px;">(Melihat data detail di Xenobank.com)</a>
                 </div>
+
+                <div class="height wide column">
                 <div style="text-align: center">
-                        <a id="copyMNButton" data-clipboard-text="" class="ui left labeled icon large fluid green button copy"
-                            style="margin-bottom:10px;"> <i class="left magic icon"></i>
-						  Tekan untuk Tautan Referensi!
-                        </a>
-                    </div>
-                <div id="masternode" class="ui segments masternode hidden">
+                <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
+                <i class="left comments icon"></i>
+                    Butuh bantuan? Tekan untuk Mengobrol.
+                </a>
+                </div>
+                    <div id="masternode" class="ui segments masternode hidden">
                         <div class="ui segment" style="text-align: left;">
                             <p style="margin-bottom: 4px;">
-							  <strong>33%</strong> dari biaya Commonwealth berlaku untuk perujuk ketika tautan digunakan..<a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank"> Detail.</a>
+                                <strong>33%</strong> dari biaya Commonwealth berlaku untuk perujuk ketika tautan digunakan..<a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank"> Detail.</a>
                             </p>
                             <div id="refDivs" style="text-align: center;">Hasil Referral Dividend Terbaru: <span id="myRefDividends"></span></div> 
                         </div>
-                        <!-- <div class="ui secondary segment">
-                            <div class="link masternode">
-                                <a id="masternodeLink" href="/?ref=0x">https://id.commonwealth.gg/index.html?ref=0x123456</a> 
-                            </div>
-                        </div> -->
                     </div>
-            </div>
-            <div class="eight wide column">
-                                <div style="text-align: center">
-                            <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button"
-                                style="margin-bottom:10px;">
-                                <i class="left comments icon"></i>
-							  Butuh bantuan? Tekan untuk Mengobrol.
-                            </a>
+                    <div style="text-align: center;  margin-top: 15px;">
+                        <a id="copyMNButton" data-clipboard-text="" class="ui left labeled icon large fluid green button copy"
+                            style="margin-bottom:10px;"> <i class="left magic icon"></i>
+                            Tekan untuk Tautan Referensi!
+                        </a>
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a id="transferOpen" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
+                        <i class="left paper plane icon"></i>
+                            Kirim 🐳 Terima Point.
+                        </a>
+                    </div>
+                    <div class ="ui segment">
+                        <div id="autoReinvest" class="ui toggle checkbox reinvest" style="margin-top: 0px; padding-top: 0px; top: 7px;">
+                            <input type="checkbox" name="public"></div><label id="reinvestToggle" for="autoReinvest">Auto Reinvestasi <i id="infoButton" class="info circle icon"></i></label>                    
                         </div>
-                    <div class="ui segments" style="margin: 0px;">
+                    </div>
+                    <div class="ui segments small modal" style="margin: 0px;">
                             <div class="ui segment">
+                           
                                 <h4 class="ui header">
-                                    <i class="circular inverted blue exchange alternate icon"></i>
+                                    <i class="circular inverted green exchange alternate icon"></i>
+ 
                                     <div class="content">
-									  <div class="sub header"><b>Kirim Point</b>. <i>(Dividen akan automatis masuk ke dompet ETC Anda).</i></div>
+                                        <div class="sub header"><b>Kirim Point</b>. <i>(Dividen akan automatis masuk ke dompet ETC Anda).</i>
+                                    </div>
                                     </div>
                                 </h4>
                             </div>
-                            <div class="ui segment">
-                             
-
-                          <!-- Trigger/Open The Modal -->
-                          <button id="myBtn" class="ui fluid green button" style="margin-top:10px;">
-                           Alamat Crop
-                          </button>
-                          <!-- The Modal -->
-                          <center>
-                          <div id="myModal" class="modal">
-                          <div class="ui segment modal-content">
-                          <div class="modal-body">
-                          <span class="close">&times;</span>
-                          <img id="qrImage" src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=Hello%20world&amp;choe=UTF-8" alt="Your Crop Address as a QR Code">
-                          <br>
-                          <b>Crop Saya:</b> <span id="myCropAddress" class="approx">
-                            </span> <button id="copyAddressButton"
+                            <div class="ui segment notranslate" style="color: black !important;">
+<center><img id="qrImage" src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=Hello%20world&amp;choe=UTF-8" alt="Your Crop Address as a QR Code"></center>                   
+                                <center><b>Crop Saya: </b> 
+<span id="myCropAddress"></span></center> <center><button id="copyAddressButton"
                                     class="ui primary basic button copy" data-clipboard-text="">
                                     <i class="copy icon"></i>
-                                </button>
+                                </button></center>
                             </div>
-                           </div>
-                          </div>
-                         </div></center>
                             <div class="ui segment">
                                 <form class="ui form">
                                     <div class="field">
-                                    <input type="text" id="transferAddress" placeholder="         Alamat Crop Tujuan" class=qrcode-text><label class=qrcode-text-btn ><input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
+                                       <input type="text" id="transferAddress" placeholder="         Alamat Crop Tujuan" class=qrcode-text><label class=qrcode-text-btn ><input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
                                     <b><span>Scan QrCode</span></b>
                                     </div>
                                 </form>
                             </div>
                             <div class="ui segment">
                                 <div class="ui right labeled left icon input fluid buy">
-                                    <input type="text" id="transferTokenCount" placeholder="Jumlah Poin">
+                                    <input type="text" id="transferTokenCount" placeholder="Jumlah Point"> 
                                     <div class="ui tag teal label notranslate">
                                         Point
                                     </div>
@@ -349,29 +341,18 @@
                             <div class="ui segment">
                                 <button id="transfer" class="ui right labeled large icon teal fluid button">
                                     <i class="right arrow icon"></i>
-                                    Tranfer
+                                    Transfer
                                 </button>
                             </div>
-                            <div class ="ui segment">
-                                <div id="autoReinvest" class="ui toggle checkbox reinvest" style="margin-top: 0px; padding-top: 0px; top: 7px;">
-                                    <input type="checkbox" name="public"></div><label id="reinvestToggle" for="autoReinvest">Automatis Reinvest <i id="infoButton" class="info circle icon"></i></label>                    
-                                </div>
-                            </div>
-                            <!-- <div class="ui segment">
-                                <a id="refillButton" class="donate-with-crypto ui right labeled icon large fluid orange button coinbase-override"
-                                    style="padding-top: 10px" href="https://commerce.coinbase.com/checkout/ea25233e-7a3f-4554-b450-41d13dfdc6ff">
-                                    <i class="right bitcoin icon"></i>
-                                    <span class="coinbase-override">Beli Poin dengan Crypto currency</span>
-                                </a>
-                                <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-                                </script>
-                            </div> -->
+<!-- New code -->
+                           </div>
                             
                         </div>
             </div>
         </div>
     
     <br>
+
     <div class="ui inverted vertical footer segment gradient personal">
         <div class="ui container">
             <div class="ui stackable inverted divided equal height stackable grid">
