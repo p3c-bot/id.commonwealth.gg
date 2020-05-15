@@ -95,14 +95,10 @@ $('#infoButton')
         position: 'top center'
     });
 
-$('#portfolioButton').hide();
-
-$( "#refillButton" ).click(function() {
-    if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'RefillLinkClick'});};
-});
-
-$( "#buyWithCoinbase" ).click(function() {
-    if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'BuyWithCoinbase'});};
+$( "#transferOpen" ).click(function() {
+    $('.ui.modal')
+    .modal('show')
+    
 });
 
 
