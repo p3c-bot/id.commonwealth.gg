@@ -102,11 +102,6 @@ $( "#transferOpen" ).click(function() {
 });
 
 
-$("#transaksi").click(function() {
- window.location.href = "https://blockscout.com/etc/mainnet/address/" + myCropAddress + "/token_transfers";
-
-});
-
 
 function copyAddress() {
     if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'CopyAddress'});};
