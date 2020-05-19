@@ -21,7 +21,11 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/tribes.css">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
     <link rel="icon" type="image/png" href="img/tribes/moai.png">
+  
     <!-- GA -->
     <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141280467-1"></script>
@@ -66,7 +70,7 @@
                     </a>
                     <a href="/use.html">
                         <div class="opacity" style="color: black;">
-                            Akun: <span id="myCropTokens"></span> P3C
+                            Account: <span id="myCropTokens"></span> Point
                         </div>
                     </a>
                     <a href="/tribes.html">
@@ -113,9 +117,9 @@
                     Bergabung dengan Tribe ini! <div id="buttonTribeCost"></div>
                 </button>
                 <div id="refundArea">
-                <h2>Anda sudah berada di Tribe ini, temukan pemain lain Sekarang!</h2>
+               <h2>Anda sudah berada di Tribe ini, temukan pemain lain Sekarang!</h2>
                 <a href="#" id="refund" class="ui large fluid orange button" style="margin-top:10px;">
-                    Pengembalian dana
+                    Pengembalian Dana
                 </a>
                 </div>
                 </div>
@@ -131,12 +135,13 @@
                     <div class="bar">
                       <div class="progress"></div>
                     </div>
-                    <div class="label" id="tribeLabel">Null Menuggu / Null Total</div>
+                    <div class="label" id="tribeLabel">Null Menunggu / Null Total</div>
                   </div>
             </div>
             <div class="eight wide column buy" id="buyArea">
               <h2><i class="globe icon"></i>Lokasi Tribe</h2>
-              <iframe id="map" style="width:100%; height: 400px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjN9bBBMOM3j33HZYkueaV7akl8IMciE0&q=-33.8569,151.2152&center=-33.8569,151.2152&zoom=4&maptype=roadmap"></iframe>
+              <div id="map" style="width:100%; height: 400px;"></div>
+              <!-- <iframe id="map"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjN9bBBMOM3j33HZYkueaV7akl8IMciE0&q=-33.8569,151.2152&center=-33.8569,151.2152&zoom=4&maptype=roadmap"></iframe> -->
             </div>
         </div>
 
@@ -154,11 +159,13 @@
                     <div class="ui segment">
                             <h4 style="">Q: Bagaimana cara kerja game ini?<i class="right arrow icon"></i></h4>
                             <h4 style="text-align: left">
-                                <p >Tujuan dari Commonwealth Tribes adalah untuk mengurangi risiko dalam berinvestasi di Commonwealth. Investasikan sebagai grup Tribe dan raih hadiah lebih besar!</p>
+                                <p >Tujuan dari Commonwealth Tribes adalah untuk mengurangi risiko dalam berinvestasi di Commonwealth. Investasikan sebagai grup Tribe dan raih hadiah lebih besar!
+                               <a href="https://medium.com/@masterhax/introducing-commonwealth-tribes-5d206890e6a6">Belajarlah lagi.</a></p>
                                 <ul>
                                     <li>When a game is created, each user puts ETC into the contract. The ETC can be refunded at any time.</li>
                                     <li>Saat game dibuat, setiap pengguna memasukkan ETC ke dalam kontrak. ETC dapat dikembalikan kapan saja. </li>
                                     <li>Setiap pengguna menerima Point mereka serta mendapatkan 3% bonus!</li>
+                                
                                 </ul>
                             </h4>
                         </div>
@@ -213,7 +220,7 @@
             <div class="ui stackable inverted divided equal height stackable grid">
                 <div class="three wide column">
                     <div class="ui inverted link list">
-                        <a class="item" href="/">Home</a>
+                        <a class="item" href="/">Rumah</a>
                         <a class="dashboard-link item" href="/use.html">Dompet</a>
                         <a href="/chart.html" class="item">Grafik</a>
                         <a href="/commonwealth.pdf" target="_blank" class="item">Kertas Putih</a>
@@ -225,20 +232,11 @@
                         <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left discord icon"></i>Discord Chat</a>
                         <a href="https://twitter.com/commonwealthgg" target="_blank" class="item">Twitter</a>
                         <a href="https://medium.com/@masterhax/" target="_blank" class="item">Blog</a>
-                       
+                        
                         <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Kontrak Pintar</a>
                         <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Docs</a>
                     </div>
                 </div>
-               <div class="three wide column">
-                        <div class="ui inverted link list" style="margin-top:0px;">
-                            <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left discord icon"></i>Discord Chat</a>
-                            <a href="https://medium.com/@masterhax/" target="_blank" class="item">Blog</a>
-                            <a href="https://twitter.com/commonwealthgg" target="_blank" class="item">Twitter</a>
-                            <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Contract Pintar</a>
-                            <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Docs</a>
-                        </div>
-                    </div>
 				  <div class="ten wide column">
 					<div class="footer"><div style="font-size: 11px; padding: 10px 20px; line-height: 13px;"><span style="background: #428BCA; color: #fff; font-weight: bold;">&nbsp;PERHATIAN&nbsp;</span>Proyek ini bersifat eksperimental. Jangan kirim Koin dan Token apa pun selain Poin(P3C) ke alamat Crop anda, Karena anda bisa kehilangan <span class="notranslate">ETC</span> yang anda kirim. Dan tidak ada jaminan untuk <span class="notranslate">ETC</span> anda. Ini adalah teknologi yang sangat baru dan kami dengan hormat meminta siapa pun yang tidak memahami risiko yang melekat pada teknologi Blockchain untuk tidak berpartisipasi dalam Commonwealth. Untuk melihat kontrak berjalan di
 						<a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>
@@ -256,6 +254,8 @@
     <script src="lib/web3.min.js"></script>
     <script src="lib/clipboard.min.js"></script>
     <script src="lib/lodash.min.js"></script>
+    <script src="lib/leaflet.min.js"></script>
+
     <script src="js/util.js"></script>
     <script src="js/etc/contracts.js"></script>
     <script src="js/etc/wallet/farm.js"></script>
