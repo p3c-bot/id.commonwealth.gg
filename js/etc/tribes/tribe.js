@@ -246,6 +246,7 @@ function loadLocation(address,power){
         var mymap = L.map('map').setView(data, 5);
         var marker = L.marker(data).addTo(mymap);
         var circle = L.circle(data, {
+            className: 'pulse',
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
