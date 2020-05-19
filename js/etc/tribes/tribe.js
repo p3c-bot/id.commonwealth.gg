@@ -244,7 +244,7 @@ function loadLocation(address,power){
     $.getJSON("https://api.commonwealth.gg/planet/newcoord/"+checksum, function (data) {
         console.log(data)
         var mymap = L.map('map').setView(data, 5);
-        var marker = L.marker(data).addTo(mymap);
+        var marker = L.marker(data).addTo(mymap).bindPopup('Posisi Tribe anda.').openPopup();
         var circle = L.circle(data, {
             color: 'red',
             fillColor: '#f03',
