@@ -27,16 +27,15 @@ if (tribeID){
         $("#infoTribeId").html(tribeID);
         if (result != "0x0000000000000000000000000000000000000000"){
             var activeTribeAddress = result
-            loadLocation(activeTribeAddress)
             activeTribe = web3.eth.contract(contracts.tribe.abi).at(String(result));
-            getTribeDetails(activeTribe)
+            getTribeDetails(activeTribe, activeTribeAddress)
         } else {
             expiredTribeAlert()
         }
     });
 }
 
-function getTribeDetails(tribe) {
+function getTribeDetails(tribe,tribeAddress) {
     tribe.size.call(function (err, result) {
         activeTribeSize = result.toNumber()
         if (activeTribeSize == 0){
@@ -54,17 +53,20 @@ function getTribeDetails(tribe) {
             $('#infoTribeSize').text(sizeString)
             $('#tribeSize').progress({percent: percentage});
             $("#tribeLabel").text(tribeString);
+
+            tribe.cost.call(function (err, result) {
+                activeTribeCost = result.toNumber()
+                var prettyNumber = web3.fromWei(parseFloat(activeTribeCost).toFixed(4))
+                $("#infoTribeCost").html( prettyNumber + " ETC");
+                $("#buttonTribeCost").html(" ("+ prettyNumber + " ETC)");
+                tribeReward = Number(web3.fromWei(activeTribeCost / buyPrice)).toFixed(1)
+                $("#infoTribeReward").html( tribeReward + " Point");
+                
+                var power = (web3.fromWei(activeTribeCost) * activeTribeWaiting * 50000)
+                loadLocation(tribeAddress, power)
+            }); 
         });
     });
-
-    tribe.cost.call(function (err, result) {
-        activeTribeCost = result.toNumber()
-        var prettyNumber = web3.fromWei(parseFloat(activeTribeCost).toFixed(4))
-        $("#infoTribeCost").html( prettyNumber + " ETC");
-        $("#buttonTribeCost").html(" ("+ prettyNumber + " ETC)");
-        tribeReward = Number(web3.fromWei(activeTribeCost / buyPrice)).toFixed(1)
-        $("#infoTribeReward").html( tribeReward + " Point");
-    }); 
 
     tribe.name.call(function (err, result) {
         activeTribeName = web3.toAscii(result).trim();
@@ -82,6 +84,7 @@ function getTribeDetails(tribe) {
             $( "#join").hide();
         }
     });
+
     
     new ClipboardJS('.button');
     $("#copyTribeButton").attr("data-clipboard-text", 'https://id.commonwealth.gg/tribe.html?id=' + tribeID + "#");
@@ -107,7 +110,7 @@ $("#createTribe").click(function () {
     if (entryCost != 0 && amountOfMembers > 1 && name.length < 32){
         createTribe(name, amountOfMembers, entryCost)
     } else {
-        alertify.error("Silakan membuat Tribe lebih dari 1 Member.")
+        alertify.error("Harap buat Tribe dengan lebih dari 1 Anggota.")
     }
 })
 
@@ -126,14 +129,14 @@ $("#join").click(function () {
 
 
 $('#copyTribeLink').on('click', function (){
-    alertify.success('<h3>Tautan Tribe disalin</h3>', 2)
+    alertify.success('<h3>Tautan Tribe Disalin</h3>', 2)
 })
 
 var address;
 // CREATE GAME
 function createTribe(tribeName, amountOfMembers, entryCost) {
     if (Number(tribeNumber) == null || Number((entryCost / buyPrice).toFixed(1) == null)){
-        alertify.error('Error: Silakan confirmasi Dompet anda dan Terkonesi dengan ETC')
+        alertify.error('Error: Harap konfirmasi dompet Anda telah masuk dan terhubung ke ETC')
         return
     } 
     amount = web3.toWei(entryCost)
@@ -173,7 +176,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
                 console.log(JSON.stringify(data))
 
                 newTribeLink = 'https://id.commonwealth.gg/tribe.html?id=' + tribeNumber + "#"
-                $('#tribeAddress').innerHTML = 'Tribe Created. ID is ' + result.toString()
+                $('#tribeAddress').innerHTML = 'Tribe Dibuat. ID adalah ' + result.toString()
                 tribeCreatedAlert()
                 setTimeout(function () {
                     window.location.href = newTribeLink; //will redirect to your blog page (an ex: blog.html)
@@ -226,22 +229,37 @@ function refund(tribe){
                     url: "https://api.commonwealth.gg/tribes/leave/" + tribeID + "/" + userAddress,
                     crossDomain: true,
                 });
-                alertify.success(" Pengembalian Dana, Silakan tunggu.")
+                alertify.success(" Mengumpulkan Pengembalian Dana, harap tunggu.")
             } else {
                 console.log(error);
             }
-            // $('#tribeAddress').innerHTML = 'Tribe Created. ID is ' + result.toString()
+            // $('#tribeAddress').innerHTML = 'Tribe Dibuat. ID adalah ' + result.toString()
         }
     )
 }
 
-function loadLocation(address){
+function loadLocation(address,power){
+
     checksum = web3.toChecksumAddress(address)
-    $.getJSON("https://api.commonwealth.gg/planet/coord/"+checksum, function (data) {
-        coord = data;
-        url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBjN9bBBMOM3j33HZYkueaV7akl8IMciE0&q=" + coord + "&center=" + coord + "&zoom=4&maptype=roadmap"
-        // alert('WTF')
-        $("#map").attr("src",url); 
+    $.getJSON("https://api.commonwealth.gg/planet/newcoord/"+checksum, function (data) {
+        console.log(data)
+        var mymap = L.map('map').setView(data, 5);
+        var marker = L.marker(data).addTo(mymap);
+        var circle = L.circle(data, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: power
+        }).addTo(mymap);
+        
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ'
+        }).addTo(mymap);
     })
 }
 
@@ -268,7 +286,7 @@ function joinTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Joined'});};
     alertify.success("Bergabung sekarang! Untuk Hadiah " + tribeReward + " Point")
     alertify.alert(
-    "Joining In",                        
+    "Bergabung",                        
     `
     <h2 style="text-align:center;">
     Berhasil! Anda sudah berada di Tribe Dan menunggu Tribe lain untuk bergabung.
@@ -290,7 +308,7 @@ function succesfulTribeAlert(){
     </h2>
     <video class="ui image etc-logo center-larger" autoplay>
     <source src="img/tribes/chest.mp4" type="video/mp4">
-    Browse anda tidak support dengan video.
+    Browser anda tidak support dengan video.
     </video>`,
     function() {window.location.href = "/use.html"}
     )
