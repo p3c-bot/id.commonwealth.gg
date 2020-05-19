@@ -244,13 +244,15 @@ function loadLocation(address,power){
     $.getJSON("https://api.commonwealth.gg/planet/newcoord/"+checksum, function (data) {
         console.log(data)
         var mymap = L.map('map').setView(data, 5);
-        var marker = L.marker(data).addTo(mymap).bindPopup('Posisi Tribe anda.').openPopup();
+        var marker = L.marker(data).addTo(mymap);
         var circle = L.circle(data, {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
             radius: power
         }).addTo(mymap);
+       
+        marker.bindPopup("Posisi Tribe anda").openPopup();
         
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
