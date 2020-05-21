@@ -30,3 +30,9 @@ $( "#infoDayak" ).click(function() {
     if (typeof gtag !== 'undefined'){gtag('event', 'tribes', {'event_label': 'Usage', 'event_category': 'dayak'});};
 });
 
+
+$("#dayak").click(function() {
+    $('.ui.modal')
+    .modal('show')
+    
+});
