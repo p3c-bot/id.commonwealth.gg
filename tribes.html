@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/lib/alertify.min.css" />
         <link rel="stylesheet" href="css/lib/jquery.dataTables.min.css">
         <link rel="stylesheet" href="css/lib/responsive.dataTables.min.css">    
-        <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="css/tribes.css">
         <link rel="icon" type="image/png" href="img/tribes/moai.png">
@@ -37,42 +37,57 @@
         </script>
     </head>
     <body>
-        <div class="ui large inverted stackable menu gradient emerald" style="border-radius:0px !important;">
-            <div class="ui container">
+<style>
+ .dayak { position:fixed; bottom:0px; right: 0px; width:50%; z-index:1000;  padding:2px; margin:auto; text-align:center; float:none;  } </style> <div class="dayak" id="dayak"> <img src="img/tribes/suku.png"></div>
+    <nav id="menunav">
+    <input type="checkbox" id="checkbox1" />
+    <label for="checkbox1">
+<ul class="menu demo">
+<div class="ui menu container  emerald" style="border-radius:0px !important;">
+ <div class="ui container">
                 <a class="header item" href="/tribes.html">
                     <img src="img/tribes/moai.png" style="height: 45px;" ui mini image" />
                     <h2 class="title">Commonwealth Tribes</h2>
                 </a>
-                <div class="right menu">
+<br>
+              
                     <div class="item">
-                        <a href="/index.html">
+                       <li><a href="/index.html">
                             <div class="opacity">
                                 <strong>Rumah
                                 </strong>
                             </div>
-                        </a>
-                        <a href="/tribes.html">
+                        </a></li>
+                        <li><a href="/tribes.html">
                             <div class="opacity">
                                 <strong>
                                     <i class="users icon"></i>
                                 </strong>
                                 Tribes: <span id="tribeNumber"></span>
                             </div>
-                        </a>
-                        <div class="opacity">
-                            <a href="https://pro.coinbase.com/trade/ETC-USD" style="color: white" target="_blank"><strong>
-                                <span>Harga ETC:&nbsp;</span>
+                        </a></li>
+                        
+                            <li><a href="https://pro.coinbase.com/trade/ETC-USD" style="color: white" target="_blank">
+   <div class="opacity">
+                         <strong><span>Harga ETC:&nbsp;</span>
                             </strong>
-                            $<span id="price">0.0</span>
-                            </a>
-                        </div>
-                        <div class="opacity">
-                            <a href="/use.html" style="color: white" target="_blank">Dompet</a>
-                        </div>
+                          $<span id="price">0.0</span></strong>                         
+                        </div> </a></li>
+                        
+                            <li><a href="/use.html">
+                             <div class="opacity">
+                            <strong>Dompet</strong>
+                        </div></a></li>
                     </div>
                 </div>
             </div>
-        </div>
+        
+     
+
+</ul>
+  <span class="ui green fluid button toggle">☰</span>
+  </label>
+        
         <div class="ui container margin top two">
             <div class="ui stackable grid">
                 <div class="ui selection dropdown" style="margin-bottom: 10px;">
@@ -85,10 +100,14 @@
                       <div class="item" data-value="2">Tribes Selesai</div>
                     </div>
                   </div>
+
                 <div class="sixteen wide column border right border left" style="background: rgba(58, 150, 139, 0.17);">
                     <h1 class="ui header">
                         <div id="title" class="content">Active Tribes
                     </h1>
+
+
+
                     <table id="tribes" class="display">
                         <thead>
                             <tr>
@@ -111,7 +130,7 @@
             <div class="ui stackable grid">
 
                 <div class="eight wide column">
-                    <div class="ui segments">
+                       <div class="ui segments small modal" style="margin: 0px;">
                             <div class="ui segment">
                                 <h2 class="ui header">
                                     <div class="content">
@@ -155,21 +174,14 @@
                             <i class="left discord icon"></i>
                             Butuh bantuan? Tanyakan Didiscord kita. 
                         </a>
-                    </div>
-                    <div class="ui segments">
-                        <div class="ui segment">
-                                <h4 style="">Q: Bagaimana cara kerja game ini?</h4>
-                                <h4 style="text-align: left">
-                                    <p >Tujuan Tribe adalah untuk mengurangi risiko berinvestasi di Commonwealth. Investasikan sebagai Tribe!</p>
-                                    <ul>
-                                        <li>Ketika suatu tribe dibuat, setiap pengguna menempatkan ETC ke dalam kontrak. ETC dapat dikembalikan kapan saja.</li>
-                                        <li>Setelah suku penuh, semua ETC digunakan untuk membeli Poin di Commonwealth. dan Point akan di bagikan merata di antara para pemain. </li>
-                                        <li>Setiap pengguna menerima Point mereka serta bonus 3%!</li>
-                                    </ul>
-                                </h4>
-                            </div>
-                    </div>
+                    </div>                 
                 </div>
+ <div style="text-align: center; margin-top: 15px;">
+                        <a id="infoDayak" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
+                        <i class="left paper circle icon"></i>
+                            🧔Apa itu Tribe?
+                        </a>
+                    </div>
             </div>
         </div>
         <script src="lib/jquery.min.js"></script>
