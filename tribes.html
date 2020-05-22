@@ -36,10 +36,49 @@
             gtag('js', new Date());
             gtag('config', 'UA-141280467-1');
         </script>
+
+<style type="text/css">
+
+body {
+background: url("img/bg.jpeg");
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+ z-index:1000; 
+}
+
+
+.suku {
+align-self: flex-end;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+margin: 0 auto 0 auto;
+transform-origin: bottom;
+
+}
+.bo {
+animation-name: bo;
+animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes bo {
+0% { transform: scale(1,1) translateY(0); }
+10% { transform: scale(1.1,.9) translateY(0); }
+30% { transform: scale(.9,1.1) translateY(-100px); }
+50% { transform: scale(1.05,.95) translateY(0); }
+57% { transform: scale(1,1) translateY(-7px); }
+64% { transform: scale(1,1) translateY(0); }
+100% { transform: scale(1,1) translateY(0); }
+}
+
+
+
+</style>
     </head>
     <body>
+
+
 <style>
- .dayak { position:fixed; bottom:0px; right: 0px; width:50%; z-index:1000;  padding:2px; margin:auto; text-align:center; float:none;  } </style> <div class="dayak" id="dayak"> <img src="img/tribes/suku.png"></div>
+ .dayak { position:fixed; bottom:0px; right: 0px; width:35%; z-index:1000;  padding:2px; margin:auto; text-align:center; float:none;  } </style> <div class="dayak" id="dayak"> <img src="img/tribes/suku.png"></div>
     <nav id="menunav">
     <input type="checkbox" id="checkbox1" />
     <label for="checkbox1">
@@ -103,11 +142,24 @@
                   </div>
 
                 <div class="sixteen wide column border right border left" style="background: rgba(58, 150, 139, 0.17);">
+
+<center><div class="suku bo"> <img src="animated/gambar1.png" width="100" height="150" id="sukuSaya"></div></center>
                     <h1 class="ui header">
                         <div id="title" class="content">Active Tribes
                     </h1>
 
 
+
+<script>
+
+ window.onload = PilihSuku;
+	var gambar = new Array("animated/gambar2.png","animated/gambar3.png","animated/gambar4.png","animated/gambar5.png","animated/gambar6.png","animated/gambar7.png","animated/gambar8.png");
+
+	function PilihSuku() {
+	    var randomNum = Math.floor(Math.random() * gambar.length);
+	    document.getElementById("sukuSaya").src = gambar[randomNum];
+	}
+</script>
 
                     <table id="tribes" class="display">
                         <thead>
@@ -136,6 +188,10 @@
                                 <h2 class="ui header">
                                     <div class="content">
                                         <span>Membuat Tribe Baru</span>
+
+
+
+
                                     </div>
                                 </h2>
                                 <form>
@@ -212,5 +268,6 @@
                 refreshPrice() // this will run after every 5 seconds
             }, 12000);
     </script>
+
     </body>
 </html>
