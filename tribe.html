@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
-    <link rel="stylesheet" href="css/nav.css">
+ 
     <link rel="icon" type="image/png" href="img/tribes/moai.png">
     <!-- GA -->
     <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
@@ -39,6 +39,13 @@
         gtag('config', 'UA-141280467-1');
     </script>
 
+<!-- build:js modernizr.touch.js -->
+    <script src="/dist/lib/modernizr.touch.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:css mfb.css -->
+    <link href="/dist/mfb.css" rel="stylesheet">
+    <!-- endbuild -->
 <style type="text/css">
 
 body {
@@ -48,71 +55,80 @@ background: url("img/bg.jpeg");
  background-attachment: fixed;
  
 }
+.mobile{
+background: url("img/tribes/label.png");
+  background-size: 100% 100%;"
+}
+.custom-computer {
+background: url("img/tribes/label.png");
+  background-size: 100% 100%;"
+}
+
+
+ul#menu a{
+background: url("img/tribes/label.png");
+  background-size: 100% 100%;"
+}
 
 </style>
 </head>
 
 <body>
-<style>
- .dayak { position:fixed; bottom:0px; right: 0px; width:50%; z-index:1000;  padding:2px; margin:auto; text-align:center; float:none;  } </style> <div class="dayak" id="dayak"> <img src="img/tribes/suku.png"></div>
-    <nav id="menunav">
-    <input type="checkbox" id="checkbox1" />
-    <label for="checkbox1">
-<ul class="menu demo">
-    <div class="ui large primary stackable menu" style="border-radius:0px !important; background-color: whitesmoke;">
+<div class="ui large primary stackable menu" style="border-radius:0px !important; background-color: transparent; background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
         <div class="ui container">
             <div class="header">
-                <li><a class="item" href="/tribes.html">
+                <a class="item" href="/tribes.html">
                     <img src="img/tribes/moai.png" style="height: 45px;" ui mini image" />
                     <h2 class="title" style="color: black;">Commonwealth</h2>
                     <div class="opacity mobile only">
                         <strong> Tribes: <span id="tribeNumberMobile"></span>
                         </strong>
                     </div>
-                </a></li>
+                </a>
             </div>
 
-            <div class="right menu custom-computer only ">
+            <div class="right menu custom-computer only">
                 <div class="item">
-                    <li><a href="/index.html">
+                    <a href="/index.html">
                         <div class="opacity" style="color: black;">
                             <strong>Rumah
                             </strong>
                         </div>
-                    </a></li>
-                    <li><a href="/tribes.html" style="color: black;">
+                    </a>
+                    <a href="/tribes.html" style="color: black;">
                         <div class="opacity">
                             <strong>Tribes
                             </strong>
                         </div>
-                    </a></li>
-                    <li><a href="/use.html">
+                    </a>
+                    <a href="/use.html">
                         <div class="opacity" style="color: black;">
-                            Akun: <span id="myCropTokens"></span> Point
+                            Akun: <span id="myCropTokens"></span> P3C
                         </div>
-                    </a></li>
-                    <li><a href="/tribes.html">
+                    </a>
+                    <a href="/tribes.html">
                         <div class="opacity" style="color: black;">
                             <strong>
                                 <i class="users icon"></i>
                             </strong>
                             Tribes: <span id="tribeNumber"></span>
                         </div>
-                    </a></li>
+                    </a>
                 </div>
             </div>
-        
-  </ul>
-   <span class="ui green fluid button toggle">☰</span>
-  </label>
+        </div>
+    </div>
+
 
     <div class="ui container margin top two">
 
         <div class="ui stackable grid">
-            <div id="myHoldings" class="eight wide column border right border left">  
+            <div id="myHoldings" class="eight wide column border right border left" style="border: 0px">  
                 <div class="four wide column sell">
                 <h2 class="ui header">
-                    <i id="infoTribeName" class="content">Arus</i>
+                    <i id="infoTribeName" class="content" style="background: url('img/tribes/label.png');
+  background-size: 100% 100%;" padding: 10px;">Arus</i>
                 </h2>
                 <table class="ui celled table unstackable">
                     <thead>
@@ -133,25 +149,30 @@ background: url("img/bg.jpeg");
                       </tr>
                     </tbody>
                   </table>
-                <button id="join" class="ui large fluid blue button" style="margin-top:10px;">
+                <button id="join" class="ui large fluid  button" style="margin-top:10px; background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
                     Bergabung dengan Tribe ini! <div id="buttonTribeCost"></div>
                 </button>
                 <div id="refundArea">
                 <h2>Anda sudah berada di Tribe ini, temukan pemain lain Sekarang!</h2>
-                <a href="#" id="refund" class="ui large fluid orange button" style="margin-top:10px;">
+                <a href="#" id="refund" class="ui large fluid  button" style="margin-top:10px; background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
                     Pengembalian dana
                 </a>
                 </div>
                 </div>
                 <br>
                 <div style="text-align: center">
-                  <a id="copyTribeButton" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
+                  <a id="copyTribeButton" class="ui left labeled icon large fluid button" style="margin-bottom:10px; background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
                       <i class="left magic icon"></i>
                       Salin Tautan Tribe
                   </a>
                 </div>
                 <br>
-                <div class="ui green progress" id="tribeSize">
+                <div class="ui green progress" id="tribeSize"
+style="margin-bottom:10px; background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
                     <div class="bar">
                       <div class="progress"></div>
                     </div>
@@ -159,29 +180,26 @@ background: url("img/bg.jpeg");
                   </div>
             </div>
             <div class="eight wide column buy" id="buyArea">
-              <h2><i class="globe icon"></i>Lokasi Tribe</h2>
+              <h2 style="margin-bottom:10px; background: url('img/tribes/label.png');
+  background-size: 100% 100%;"><i class="globe icon"></i>Lokasi Tribe</h2>
               <div id="map" style="width:100%; height: 400px;"></div>
               <!-- <iframe id="map"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjN9bBBMOM3j33HZYkueaV7akl8IMciE0&q=-33.8569,151.2152&center=-33.8569,151.2152&zoom=4&maptype=roadmap"></iframe> -->
             </div>
         </div>
 
-        <div style="background-color: #eee; height: 1px; margin-top:20px; margin-bottom:20px;"></div>
+        <div style="background-color: green; height: 1px; margin-top:20px; margin-bottom:20px;"></div>
         <div class="ui stackable grid">
             <div class="eight wide column">
                 <div style="text-align: center">
-                    <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button"
-                        style="margin-bottom:10px;">
+                    <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid  button"
+                        style="margin-bottom:10px; background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
                         <i class="left discord icon"></i>
                         Butuh bantuan? Tanyakan Didiscord kita. 
                         </a>
                     </div>                 
                 </div>
- <div style="text-align: center; margin-top: 15px;">
-                        <a id="infoDayak" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
-                        <i class="left paper circle icon"></i>
-                            🧔Apa itu Tribe?
-                        </a>
-                    </div>
+
             </div>
         </div>
             <div class="eight wide column">
@@ -227,7 +245,38 @@ background: url("img/bg.jpeg");
         </div>
     </div>
     <br />
-    
+     <ul id="menu" class="mfb-component--br mfb-zoomin"  data-mfb-toggle="hover">
+      <li class="mfb-component__wrap">
+        <a href="#" class="mfb-component__button--main">
+          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
+          <i class="mfb-component__main-icon--active ion-close-round"></i>
+        </a>
+        <ul class="mfb-component__list">
+          <li>
+            <a href="https://id.commonwealth.gg" data-mfb-label="Dasboard" class="mfb-button">
+              <i class="mfb-button-tab"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://id.commonwealth.gg/use.html" data-mfb-label="Wallet" class="mfb-button">
+              <i class="mfb-button-tab"></i>
+            </a>
+          </li>
+          </li>
+          <li>
+            <a id="infoDayak" data-mfb-label="What Is Tribes" class="mfb-button">
+              <i class="mfb-button-tab icon-social-octocat"></i>
+            </a>
+          </li>
+            </li>
+          <li>
+            <a id="dayak" data-mfb-label="Make Tribes" class="mfb-button">
+              <i class="mfb-button-tab icon-social-octocat"></i>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
     <div class="ui inverted vertical footer segment">
         <div class="ui container">
             <div class="ui stackable inverted divided equal height stackable grid">
@@ -284,6 +333,10 @@ background: url("img/bg.jpeg");
     <script src="js/etc/wallet/use.js"></script>
     <script src="js/etc/tribes/tribe.js"></script>
     <script src="js/etc/tribes/dayak.js"></script>
+    
+<!-- build:js mfb.js -->
+  <script src="dist/mfb.js"></script>
+  <!-- endbuild -->
 
 </body>
 </html>
