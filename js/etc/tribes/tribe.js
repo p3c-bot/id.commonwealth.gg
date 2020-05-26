@@ -253,8 +253,8 @@ function loadLocation(address,power){
             radius: power
         }).addTo(mymap);
        
-        marker.bindPopup("Posisi Tribe anda").openPopup();
-        
+        marker.bindPopup("<a href='https://medium.com/@masterhax/introducing-commonwealth-tribes-5d206890e6a6'><img src='https://miro.medium.com/max/2000/1*pLAJNsr_pUeSrHDtPBJLog.jpeg' alt='Tafelsilber' width='100%'  class='alignnone size-full wp-image-952' /></a><br><strong>Commonwealth Tribes</strong><br>A tribe is an immutable smart contract that you deposit ETC into at a set price, with a name, and a membership capacity. Once you put your ETC into the tribe, you can pull out at any time. Your tribal membership is tied to your wallet address. You can be a part of multiple tribes.<br><em><a href='https://medium.com/@masterhax/introducing-commonwealth-tribes-5d206890e6a6'>Read All Here</a></em>"); 
+
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
