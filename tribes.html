@@ -19,11 +19,21 @@
         <link rel="stylesheet" href="css/lib/alertify.min.css" />
         <link rel="stylesheet" href="css/lib/jquery.dataTables.min.css">
         <link rel="stylesheet" href="css/lib/responsive.dataTables.min.css">    
+          <!-- <link rel="stylesheet" href="css/fab.css"> -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="css/tribes.css">
-        <link rel="stylesheet" href="css/nav.css">
+       <!-- <link rel="stylesheet" href="css/nav.css"> -->
         <link rel="icon" type="image/png" href="img/tribes/moai.png">
+
+
+<!-- build:js modernizr.touch.js -->
+    <script src="/dist/lib/modernizr.touch.js"></script>
+    <!-- endbuild -->
+    <!-- build:css mfb.css -->
+    <link href="/dist/mfb.css" rel="stylesheet">
+    <!-- endbuild -->
+
         <!-- GA -->
         <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141280467-1"></script>
@@ -38,13 +48,13 @@
         </script>
 
 <style type="text/css">
-
 body {
 background: url("img/bg.jpeg");
  background-repeat: no-repeat;
  background-size: 100% 100%;
  background-attachment: fixed;
  z-index:1000; 
+
 }
 
 
@@ -56,6 +66,7 @@ margin: 0 auto 0 auto;
 transform-origin: bottom;
 
 }
+
 .bo {
 animation-name: bo;
 animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
@@ -71,84 +82,99 @@ animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
 }
 
 
+ul#menu a{
+background: url("img/tribes/label.png");
+  background-size: 100% 100%;"
+}
 
+.header{
+background: url("img/tribes/label.png");
+  background-size: 100% 100%;
+}
+
+.mobile{
+background: url("img/tribes/label.png");
+  background-size: 100% 100%;
+}
 </style>
+
+
+
+
     </head>
     <body>
 
-
-<style>
- .dayak { position:fixed; bottom:0px; right: 0px; width:35%; z-index:1000;  padding:2px; margin:auto; text-align:center; float:none;  } </style> <div class="dayak" id="dayak"> <img src="img/tribes/suku.png"></div>
-    <nav id="menunav">
-    <input type="checkbox" id="checkbox1" />
-    <label for="checkbox1">
-<ul class="menu demo">
-<div class="ui menu container  emerald" style="border-radius:0px !important;">
- <div class="ui container">
-                <a class="header item" href="/tribes.html">
+<div class="ui large inverted stackable menu gradient " style="border-radius:0px !important; background-color: transparent;">
+        <div class="ui container">
+         <div class="header">
+                <a class="item" href="/tribes.html">
                     <img src="img/tribes/moai.png" style="height: 45px;" ui mini image" />
                     <h2 class="title">Commonwealth Tribes</h2>
+  <div class="opacity mobile only">
+                        <strong> Brangkas:&nbsp; <span id="etcInContract">0.0</span>
+                        </strong>
+                    </div>
                 </a>
-<br>
-              
+</div>
+                <div class="right menu custom-computer only">
                     <div class="item">
-                       <li><a href="/index.html">
+                        <a href="/index.html">
                             <div class="opacity">
                                 <strong>Rumah
                                 </strong>
                             </div>
-                        </a></li>
-                        <li><a href="/tribes.html">
+                        </a>
+                        <a href="/tribes.html">
                             <div class="opacity">
                                 <strong>
                                     <i class="users icon"></i>
                                 </strong>
                                 Tribes: <span id="tribeNumber"></span>
                             </div>
-                        </a></li>
-                        
-                            <li><a href="https://pro.coinbase.com/trade/ETC-USD" style="color: white" target="_blank">
+                        </a>
+   <a href="https://pro.coinbase.com/trade/ETC-USD" style="color: white" target="_blank">
    <div class="opacity">
                          <strong><span>Harga ETC:&nbsp;</span>
                             </strong>
                           $<span id="price">0.0</span></strong>                         
-                        </div> </a></li>
+                        </div> </a>
                         
-                            <li><a href="/use.html">
+                            <a href="/use.html">
                              <div class="opacity">
                             <strong>Dompet</strong>
-                        </div></a></li>
+                        </div></a>
+                    </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            
         
-     
+                        
 
-</ul>
-  <span class="ui green fluid button toggle">☰</span>
-  </label>
-        
+
         <div class="ui container margin top two">
-            <div class="ui stackable grid">
-                <div class="ui selection dropdown" style="margin-bottom: 10px;">
+            <div class="ui stackable grid" style="margin-bottom: 10px; border: 0px;">
+                <div class="ui selection dropdown" style="
+background: url('img/tribes/peta1.png');
+  background-size: 100% 100%; border: 0px;">
                     <input type="hidden" name="tribes">
                     <i class="dropdown icon"></i>
                     <div class="default text">Show Tribes</div>
-                    <div class="menu">
-                      <div class="item" data-value="0">Tribes Aktif</div>
-                      <div class="item" data-value="1">Tribes Saya</div>
-                      <div class="item" data-value="2">Tribes Selesai</div>
+                    <div class="menu" style="
+background: url('img/tribes/peta2.png');
+  background-size: 100% 100%; border: 0px;">
+                      <div class="item bor" style="border: 0px;" data-value="0">Tribes Aktif</div>
+                      <div class="item bor" style="border: 0px;" data-value="1">Tribes Saya</div>
+                      <div class="item bor" style="border: 0px;" data-value="2">Tribes Selesai</div>
                     </div>
                   </div>
-
-                <div class="sixteen wide column border right border left" style="background: rgba(58, 150, 139, 0.17);">
+                 
+                <div class="sixteen wide column border right border left" style="background: rgba(58, 150, 139, 0.17); border-color: rgba(58, 150, 139, 0.17);">
 
 <center><div class="suku bo"> <img src="animated/gambar1.png" width="100" height="150" id="sukuSaya"></div></center>
                     <h1 class="ui header">
                         <div id="title" class="content">Active Tribes
                     </h1>
-
-
 
 <script>
 
@@ -161,7 +187,7 @@ animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
 	}
 </script>
 
-                    <table id="tribes" class="display">
+              <table id="tribes" class="display">
                         <thead>
                             <tr>
                                 <th>Tribe</th>
@@ -178,7 +204,8 @@ animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
                     </table>
                 </div>
             </div>
-            <div style="background-color: #eee; height: 1px; margin-top:20px; margin-bottom:20px;"></div>
+            <div style="background-color: green;
+ height: 1px; margin-top:20px; margin-bottom:20px;"></div>
 
             <div class="ui stackable grid">
 
@@ -227,20 +254,50 @@ animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
 
                 <div class="eight wide column">
                     <div style="text-align: center">
-                        <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid green button">
+                        <a href="https://discord.gg/crjsdJr" target="_blank" class="ui left labeled icon large fluid button" style="background: url('img/tribes/label.png');
+  background-size: 100% 100%;">
                             <i class="left discord icon"></i>
                             Butuh bantuan? Tanyakan Didiscord kita. 
                         </a>
                     </div>                 
                 </div>
- <div style="text-align: center; margin-top: 15px;">
-                        <a id="infoDayak" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
-                        <i class="left paper circle icon"></i>
-                            🧔Apa itu Tribe?
-                        </a>
-                    </div>
             </div>
         </div>
+
+
+
+<ul id="menu" class="mfb-component--br mfb-zoomin"  data-mfb-toggle="hover">
+      <li class="mfb-component__wrap">
+        <a href="#" class="mfb-component__button--main">
+          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
+          <i class="mfb-component__main-icon--active ion-close-round"></i>
+        </a>
+        <ul class="mfb-component__list">
+          <li>
+            <a href="https://id.commonwealth.gg" data-mfb-label="Dasboard" class="mfb-button">
+              <i class="mfb-button-tab"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://id.commonwealth.gg/use.html" data-mfb-label="Wallet" class="mfb-button">
+              <i class="mfb-button-tab"></i>
+            </a>
+          </li>
+          </li>
+          <li>
+            <a id="infoDayak" data-mfb-label="What Is Tribes" class="mfb-button">
+              <i class="mfb-button-tab icon-social-octocat"></i>
+            </a>
+          </li>
+            </li>
+          <li>
+            <a id="dayak" data-mfb-label="Make Tribes" class="mfb-button">
+              <i class="mfb-button-tab icon-social-octocat"></i>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
         <script src="lib/jquery.min.js"></script>
         <script src="lib/semantic.min.js"></script>
         <script src="lib/jquery.dataTables.min.js"></script>
@@ -254,10 +311,26 @@ animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
         <script src="js/etc/tribes/dayak.js"></script>
 
         <script>
+
+
+
+function setMarketCap(price) {
+  p3cContract.totalEthereumBalance.call(function (err, price) {
+    if (!err) {
+      amount = web3.fromWei(price).toFixed(0)
+      $("#etcInContract").replaceWith(numberWithCommas(amount) + " ETC")
+
+    }
+  })
+};
+
+
+
             function refreshPrice() {
                 $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=ETC&tsyms=USDT', function (json) {
                     var USETC = JSON.parse(JSON.stringify(json)).USDT;
                     var price = (USETC).toFixed(2);
+                    setMarketCap(price)
                     $("#price").text(price)
                 });
             }
@@ -268,6 +341,9 @@ animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
                 refreshPrice() // this will run after every 5 seconds
             }, 12000);
     </script>
-
+<!-- build:js mfb.js -->
+  <script src="dist/mfb.js"></script>
+  <!-- endbuild -->
+  <!-- @include ga.html -->
     </body>
 </html>
