@@ -165,6 +165,13 @@ function getMyCropTokens() {
                     duration: '1s',
                 });
             }
+            p3cContract.totalSupply(function(e, r){
+                percentOwned = (myCropTokens / r) * 100 
+                console.log(percentOwned)
+                if (percentOwned > .05){
+                    $("#supplyControlled").text(" | " + percentOwned.toFixed(2) + "% of Supply")
+                }
+            })
 
         }
     });
