@@ -165,6 +165,7 @@ function createTribe(tribeName, amountOfMembers, entryCost) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
+                data['txhash'] = result
                 $.ajax({
                     type: "POST",
                     url: "https://api.commonwealth.gg/tribes/create",
@@ -201,7 +202,7 @@ function buyIn(tribe,activeTribeCost) {
             if (!error) {
                 $.ajax({
                         type: "GET",
-                        url: "https://api.commonwealth.gg/tribes/join/" + tribeID + "/" + userAddress,
+                        url: "https://api.commonwealth.gg/tribes/join/" + tribeID + "/" + userAddress + "/" + result,
                         crossDomain: true,
                 });
                 if(activeTribeSize - activeTribeWaiting == 1){
@@ -226,7 +227,7 @@ function refund(tribe){
             if (!error) {
                 $.ajax({
                     type: "GET",
-                    url: "https://api.commonwealth.gg/tribes/leave/" + tribeID + "/" + userAddress,
+                    url: "https://api.commonwealth.gg/tribes/leave/" + tribeID + "/" + userAddress + "/" + result,
                     crossDomain: true,
                 });
                 alertify.success(" Mengumpulkan Pengembalian Dana, harap tunggu.")
