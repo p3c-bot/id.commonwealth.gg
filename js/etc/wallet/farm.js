@@ -122,15 +122,15 @@ function getMyCropDividends() {
                 myCropDividends = result;
                 myCropDividendsPoints = (web3.fromWei(myCropDividends) / buyPrice)
                 if (change) {
-                    $("#myCropDividendsPoints").replaceWith("<b id='myCropDividendsPoints'>" + myCropDividendsPoints.toFixed(2) + " </b>") 
+                    $("#myCropDividendsPoints").replaceWith("<b id='myCropDividendsPoints'>" + myCropDividendsPoints.toFixed(2) + " </b>")
                     $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + web3.fromWei(myCropDividends).toFixed(8) + "</b>")
                     $('#myCropDividends').transition({
                         animation: 'flash',
                         duration: '1s',
                     });
-$('#myCropDividendsPoints').transition({ 
-                        animation: 'flash', 
-                        duration: '1s', 
+                    $('#myCropDividendsPoints').transition({
+                        animation: 'flash',
+                        duration: '1s',
                     });
                 }
                 crop.cropDividends.call(false, function (err, result) {
@@ -150,6 +150,7 @@ $('#myCropDividendsPoints').transition({
     })
 }
 
+
 var myETCValue = 0
 
 function getMyCropTokens() {
@@ -168,19 +169,23 @@ function getMyCropTokens() {
                     animation: 'flash',
                     duration: '1s',
                 });
-                $('#myETCValue').transition({ 
+                $('#myETCValue').transition({
                     animation: 'flash',
-                    duration: '1s', 
+                    duration: '1s',
                 });
             }
+            p3cContract.totalSupply(function(e, r){
+                percentOwned = (myCropTokens / r) * 100 
+                if (percentOwned > .05){
+                    $("#supplyControlled").text(" | " + percentOwned.toFixed(2) + "% of Supply")
+                }
+            })
 
-                 p3cContract.totalSupply(function(e, r){ percentOwned = (myCropTokens / r) * 100 if (percentOwned > .05){ 
-                $("#supplyControlled").text(" | " + percentOwned.toFixed(2) + "% of Supply") 
-                 } 
-                  }) 
-               }
-               });
-    }
+
+        }
+    });
+}
+
 
 function getMyCropDisabled() {
     farmContract.myCropDisabled.call(function (err, result) {
@@ -198,11 +203,13 @@ function getMyCropDisabled() {
 
 function getCropInfo(onboard) {
     getMyCrop(onboard)
+
     setTimeout(function(){ 
-    getMyCropTokens() 
-    getMyCropDisabled() 
-    getMyCropDividends() 
-  }, 300);
+        getMyCropTokens()
+        getMyCropDisabled()
+        getMyCropDividends()
+     }, 300);
+
 }
 
 function deployCrop(amountToBuy, referrer, selfBuy) {
