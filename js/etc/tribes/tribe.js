@@ -62,7 +62,7 @@ function getTribeDetails(tribe,tribeAddress) {
                 tribeReward = Number(web3.fromWei(activeTribeCost / buyPrice)).toFixed(1)
                 $("#infoTribeReward").html( tribeReward + " Point");
                 
-                var power = (web3.fromWei(activeTribeCost) * activeTribeWaiting * 50000)
+                var power = (web3.fromWei(activeTribeCost) * activeTribeWaiting * 20000) 
                 loadLocation(tribeAddress, power)
             }); 
         });
@@ -238,13 +238,14 @@ function refund(tribe){
     )
 }
 
-function loadLocation(address,power){
 
+function loadLocation(address,power){
+    var myIcon = L.icon({ iconUrl: 'https://id.commonwealth.gg/img/tribes/moai.png', iconSize: [25,35] });
     checksum = web3.toChecksumAddress(address)
-    $.getJSON("https://api.commonwealth.gg/planet/newcoord/"+checksum, function (data) {
-        console.log(data)
+    $.getJSON("https://api.commonwealth.gg/tribes/coord/"+checksum+"/"+tribeID, function (data) {
         var mymap = L.map('map').setView(data, 5);
-        var marker = L.marker(data).addTo(mymap);
+        var marker = L.marker(data, {
+      icon: myIcon}).addTo(mymap);
         var circle = L.circle(data, {
             className: 'pulse',
             color: 'red',
@@ -252,8 +253,10 @@ function loadLocation(address,power){
             fillOpacity: 0.5,
             radius: power
         }).addTo(mymap);
-       
+
         marker.bindPopup("<a href='https://medium.com/@masterhax/introducing-commonwealth-tribes-5d206890e6a6'><img src='https://miro.medium.com/max/2000/1*pLAJNsr_pUeSrHDtPBJLog.jpeg' alt='Tafelsilber' width='100%'  class='alignnone size-full wp-image-952' /></a><br><strong>Commonwealth Tribes</strong><br>A tribe is an immutable smart contract that you deposit ETC into at a set price, with a name, and a membership capacity. Once you put your ETC into the tribe, you can pull out at any time. Your tribal membership is tied to your wallet address. You can be a part of multiple tribes.<br><em><a href='https://medium.com/@masterhax/introducing-commonwealth-tribes-5d206890e6a6'>Read All Here</a></em>"); 
+
+  
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -265,6 +268,7 @@ function loadLocation(address,power){
         }).addTo(mymap);
     })
 }
+
 
 $('#copyTribeButton').on('click', function (){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Copied'});};
