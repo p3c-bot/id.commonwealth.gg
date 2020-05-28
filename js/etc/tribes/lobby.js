@@ -50,16 +50,20 @@ function buildLobby(url){
           data: 'players',
           render: function (data, type, row) {
             if (data.includes(playerAddress)){
-              return "✔️"
+              return "✅"
             } else {
-              return "🔘"
+              return "⭕"
             }
           }
         },
         {
           data: 'power',
           render: function (data, type, row) {
-            return (row.cost * row.waiting * 1000).toFixed(0)
+            power = row.cost * row.waiting * 20000
+            if (row.location && row.tribe){
+              generatePoint(row.location, power, row.name, row.tribe)
+            }
+            return numberWithCommas(power.toFixed(0))
           }
         },
         {
@@ -83,7 +87,7 @@ function buildLobby(url){
         {
           data: 'reward',
           render: function (data, type, row) {
-            return data + ' Point'
+            return data + ' Points'
           }
         },
         {
@@ -96,4 +100,29 @@ function buildLobby(url){
     });
     $('#tribes_length').hide()
   });
+}
+
+var myIcon = L.icon({ iconUrl: 'https://id.commonwealth.gg/img/tribes/moai.png', iconSize: [25,35] });
+var mymap = L.map('map').setView([45,75], 2);
+
+function generatePoint(location, power,name,id){
+  var marker = L.marker(location, {
+      icon: myIcon}).addTo(mymap);
+  var circle = L.circle(location, {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.1,
+      radius: power
+  }).addTo(mymap);
+
+    marker.bindPopup("<center>Nama Tribe<h5><a>" + linkify(name, "/tribe.html?id=" + id + "#") + "</a></h5> Pilih jika Ingin Bergabung</center>");
+  
+ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoiYW50c2Fua292IiwiYSI6ImNrYWQwOWQxYzF6NTAyem96OWd5d2V1N2wifQ.IheYsirwEr5e_Sr06guSRQ'
+  }).addTo(mymap);  
 }
