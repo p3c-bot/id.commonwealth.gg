@@ -23,10 +23,10 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="css/tribes.css">
-       <!-- <link rel="stylesheet" href="css/nav.css"> -->
+      
         <link rel="icon" type="image/png" href="img/tribes/moai.png">
 
-         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/> 
 
 <!-- build:js modernizr.touch.js -->
     <script src="/dist/lib/modernizr.touch.js"></script>
@@ -48,6 +48,10 @@
             gtag('config', 'UA-141280467-1');
         </script>
 
+
+
+
+
 <style type="text/css">
 body {
 background: url("img/bg.jpeg");
@@ -57,31 +61,6 @@ background: url("img/bg.jpeg");
  z-index:1000; 
 
 }
-
-
-.suku {
-align-self: flex-end;
-animation-duration: 2s;
-animation-iteration-count: infinite;
-margin: 0 auto 0 auto;
-transform-origin: bottom;
-
-}
-
-.bo {
-animation-name: bo;
-animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
-}
-@keyframes bo {
-0% { transform: scale(1,1) translateY(0); }
-10% { transform: scale(1.1,.9) translateY(0); }
-30% { transform: scale(.9,1.1) translateY(-100px); }
-50% { transform: scale(1.05,.95) translateY(0); }
-57% { transform: scale(1,1) translateY(-7px); }
-64% { transform: scale(1,1) translateY(0); }
-100% { transform: scale(1,1) translateY(0); }
-}
-
 
 ul#menu a{
 background: url("img/tribes/label.png");
@@ -147,11 +126,7 @@ background: url("img/tribes/label.png");
                     </div>
                         </div>
                     </div>
-                </div>
-            
-        
-                        
-
+                </div>            
 
         <div class="ui container margin top two">
             <div class="ui stackable grid" style="margin-bottom: 10px; border: 0px;">
@@ -172,21 +147,10 @@ background: url('img/tribes/peta2.png');
                  
                 <div class="sixteen wide column border right border left" style="background: rgba(58, 150, 139, 0.17); border-color: rgba(58, 150, 139, 0.17);">
 
-<center><div class="suku bo"> <img src="animated/gambar1.png" width="100" height="150" id="sukuSaya"></div></center>
+<center><div> <img src="img/tribes/gendang.gif" width="200" height="150"></div></center>
                     <h1 class="ui header">
                         <div id="title" class="content">Active Tribes
                     </h1>
-
-<script>
-
- window.onload = PilihSuku;
-	var gambar = new Array("animated/gambar2.png","animated/gambar3.png","animated/gambar4.png","animated/gambar5.png","animated/gambar6.png","animated/gambar7.png","animated/gambar8.png");
-
-	function PilihSuku() {
-	    var randomNum = Math.floor(Math.random() * gambar.length);
-	    document.getElementById("sukuSaya").src = gambar[randomNum];
-	}
-</script>
 
               <table id="tribes" class="display">
                         <thead>
@@ -318,8 +282,8 @@ background: url('img/tribes/peta2.png');
         <script src="js/etc/tribes/tribe.js"></script>
         <script src="js/etc/tribes/lobby.js"></script>
         <script src="js/etc/tribes/dayak.js"></script>
-
-
+      
+        
  <script>
 
 function setMarketCap(price) {
