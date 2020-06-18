@@ -65,10 +65,10 @@ $("#transfer").click(function () {
     destination = $("#transferAddress").val()
     amountToTransfer = $("#transferTokenCount").val()
     if (web3.isAddress(destination) != true){
-        displayError('Invalid Address')
+        displayError('<h3>Invalid Address</h3>')
     }
     if (amountToTransfer > parseInt(web3.fromWei(myCropTokens))){
-        displayError('Token tidak sesuai.')
+        displayError('<h3>Token tidak sesuai.</h3>')
     } else {
         transferFromCrop(destination, amountToTransfer)
     }
@@ -81,9 +81,9 @@ $( "#transferAddress" ).on('input', function() {
     if (web3.isAddress(destination) == true){
         cropAbi.at(destination).owner.call(function (err, owner) {
             if (owner != "0x"){
-                alertify.success('Mengirim ke Crop')
+                alertify.success('<h3>Mengirim ke Crop</h3>')
             } else {
-                alertify.warning('Periksa kembali Crop anda') 
+                alertify.warning('<h3>Periksa kembali Crop anda</h3>') 
             }
         });
     }
