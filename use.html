@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@Commonwealthgg" />
+    <meta name="twitter:creator" content="@Commonwealth_gg" />
     <meta name="twitter:title" content="Commonwealth" />
-    <meta name="twitter:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang Poin menerima pendapatan pasif saat sistem digunakan. Buang bank Anda, pergi dengan P3C." />
+    <meta name="twitter:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang menerima pendapatan pasif saat sistem digunakan. Buang bank Anda, pergi dengan Commonwealth." />
     <meta name="twitter:image" content="https://commonwealth.gg/img/coin.png"/>
     <meta property="og:url" content="https://id.commonwealth.gg" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Commonwealth" />
-    <meta property="og:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang Poin menerima pendapatan pasif saat sistem digunakan. Buang bank Anda, pergi dengan P3C." />
+    <meta property="og:description" content="Commonwealth adalah dana tabungan peer-to-peer yang dibangun di atas Ethereum Classic. Pemegang menerima pendapatan pasif saat sistem digunakan. Buang bank Anda, pergi dengan Commonwealth." />
     <meta property="og:image" content="https://id.commonwealth.gg/img/coin.png"/>
     <title>Commonwealth</title>
     <meta charset="utf8">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/qr.css">
-    <link rel="icon" type="image/png" href="img/logo/whale.png">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
     <!-- GA -->
     <meta name="google-site-verification" content="ZDl3q34Gq9Ct8J5T4o7FxNohH0fHqnGFAv4pZCoftos" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141280467-1"></script>
@@ -40,16 +40,18 @@
     <div class="ui large inverted stackable menu gradient personal" style="border-radius:0px !important;">
         <div class="ui container">
             <div class="header">
-                <div class="item">
-                    <img id="logo" src="img/logo/whale.svg" class="ui mini image home" style="margin-right:10px;" />
-                    <h2 class="title home custom-computer only">Commonwealth</h2>
-                    <div class="opacity mobile only home">
+                
+                    <div class="item" style="padding-top: 10px; padding-bottom: 5px;">
+                    <img id="logo" src="img/new-logo/white-logo-plain.png" class="custom-computer only ui image home" style="width: 8%;" />
+                    <img id="logo" src="img/new-logo/white-logo-plain.png" class="mobile only ui image home" style="margin-right:10px; width: 12%;" />
+                    <!-- <h2 class="title home custom-computer only">Commonwealth.gg</h2> -->
+                  <div class="opacity mobile only home">
                         <strong>
                             <i class="chess rook icon"></i>
                         </strong>
                         <span id="etcInContract">0</span>
                     </div>
-                    <span>
+                    <span class="right menu mobile only">
                         <select id="language">
                             <option value="id">🇮🇩&emsp;ID</option>
                             <option value="en">🇬🇧&emsp;EN</option>
@@ -93,6 +95,13 @@
                             Brangkas: <span id="etcInContract">0 ETC</span>
                         </div>
                     </a>
+                   <span>
+                        <select id="language">
+                            <option value="id">🇮🇩&emsp;ID</option>
+                            <option value="en">🇬🇧&emsp;EN</option>
+                            <option value="ru">🇷🇺&emsp;RU</option>
+                            </select>
+                    </span>
                 </div>
             </div>
         </div>
@@ -122,7 +131,7 @@
                             <div class="sub header notranslate">
                                 <span id="myTokensValue" class="converted" style="font-weight:bold;"></span><span id="myDayChange" class="converted" style="font-weight:bold;"></span>
                                 <div class="ui teal text small eleven">
-                                    <span id="myCropTokens" class="count"></span> Point<span class="custom-computer only"> / <span id="myETCValue" class="notranslate" style="font-weight:bold;"></span> ETC</span>
+                                    <span id="myCropTokens" class="count"></span> WLTH<span class="custom-computer only"> / <span id="myETCValue" class="notranslate" style="font-weight:bold;"></span> ETC</span>
                                 </div>
                             </div>
                         </h2>
@@ -133,7 +142,7 @@
                             <div class="sub header notranslate">
                                 <span id="myDividendsValue" class="converted" style="font-weight:bold;"></span>
                                 <div class="ui teal text small eleven">
-                                    <span id="myCropDividendsPoints" class="count"></span> Point /
+                                    <span id="myCropDividendsWlth" class="count"></span> WLTH /
                                     <span id="myCropDividends" class="count"></span> ETC
                                 </div>
                             </div>
@@ -164,7 +173,7 @@
                 <h2 class="ui header">
                     <img src="img/wallet/time-forward.svg" class="width one and eight" />
                     <div class="content">
-                        <span>Beli Point</span>
+                        <span>Beli WLTH</span>
                     </div>
                 </h2>
 
@@ -199,7 +208,7 @@
                 <h2 class="ui header">
                     <img src="img/wallet/time-backward.svg" class="width one and eight" />
                     <div class="content">
-                        <span>Jual Point</span>
+                        <span>Jual WLTH</span>
                     </div>
                 </h2>
 
@@ -222,11 +231,11 @@
                     <i class="tree blue icon"></i>
                     <input placeholder="..." type="text" id="sellInput">
                     <span class="ui tag blue label">
-                        Point
+                        WLTH
                     </span>
                 </div>
                 <button id="sell" class="ui large fluid blue button" style="margin-top:10px;">
-                    Jual Point
+                    Jual WLTH
                 </button>
                 <div id="sellAmount" class="ui fluid large basic blue button no click approx" style="margin-top:10px;">
                     <i>Berapa banyak yang akan anda jual?</i>
@@ -294,7 +303,7 @@
                     <div style="text-align: center; margin-top: 15px;">
                         <a id="transferOpen" class="ui left labeled icon large fluid green button" style="margin-bottom:10px;">
                         <i class="left qrcode icon"></i>
-                            Kirim 🐳 Terima Point.
+                            Kirim 🐳 Terima WLTH.
                         </a>
                     </div>
                     <label id="blockcout" class="ui primary basic green">
@@ -335,7 +344,7 @@
                             </div>
                             <div class="ui segment">
                                 <div class="ui right labeled left icon input fluid buy">
-                                    <input type="text" id="transferTokenCount" placeholder="  Jumlah Point"> 
+                                    <input type="text" id="transferTokenCount" placeholder="  Jumlah WLTH"> 
                                     <div class="ui tag teal label notranslate">
                                         Point
                                     </div>
@@ -371,14 +380,14 @@
                 <div class="three wide column">
                     <div class="ui inverted link list" style="margin-top:0px;">
                         <a href="https://discord.gg/crjsdJr" target="_blank" class="item"><i class="left comments icon"></i> Discord Chat</a>
-                        <a href="https://twitter.com/commonwealthgg" target="_blank" class="item">Twitter</a>
+                        <a href="https://twitter.com/commonwealth_gg" target="_blank" class="item">Twitter</a>
                         <a href="https://medium.com/@masterhax/" target="_blank" class="item">Blog</a>
                         <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank" class="item">Smart Contract</a>
                         <a href="https://github.com/p3c-bot/api/blob/master/README.md" target="_blank"class="item">API Docs</a>
                     </div>
                 </div>
 			  <div class="ten wide column">
-				<div class="footer"><div style="font-size: 11px; padding: 10px 20px; line-height: 13px;"><span style="background: #428BCA; color: #fff; font-weight: bold;">&nbsp;PERHATIAN&nbsp;</span>Proyek ini bersifat eksperimental. Jangan kirim Koin dan Token apa pun selain Poin(P3C) ke alamat Crop anda, Karena anda bisa kehilangan <span class="notranslate">ETC</span> yang anda kirim. Dan tidak ada jaminan untuk <span class="notranslate">ETC</span> anda. Ini adalah teknologi yang sangat baru dan kami dengan hormat meminta siapa pun yang tidak memahami risiko yang melekat pada teknologi Blockchain untuk tidak berpartisipasi dalam Commonwealth. Untuk melihat kontrak berjalan di
+				<div class="footer"><div style="font-size: 11px; padding: 10px 20px; line-height: 13px;"><span style="background: #428BCA; color: #fff; font-weight: bold;">&nbsp;PERHATIAN&nbsp;</span>Proyek ini bersifat eksperimental. Jangan kirim Koin dan Token apa pun selain WLTH ke alamat Crop anda, Karena anda bisa kehilangan <span class="notranslate">ETC</span> yang anda kirim. Dan tidak ada jaminan untuk <span class="notranslate">ETC</span> anda. Ini adalah teknologi yang sangat baru dan kami dengan hormat meminta siapa pun yang tidak memahami risiko yang melekat pada teknologi Blockchain untuk tidak berpartisipasi dalam Commonwealth. Untuk melihat kontrak berjalan di
 					<a style="color: orange;" target="_blank" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts">Sini</a>
 					dan tidak dapat diubah. </div><h4 style="margin-top: 0px;">Commonwealth.gg | Est. 2018-2020</h4> </div></div>
 			  
