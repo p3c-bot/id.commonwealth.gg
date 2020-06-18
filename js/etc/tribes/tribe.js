@@ -60,7 +60,7 @@ function getTribeDetails(tribe,tribeAddress) {
                 $("#infoTribeCost").html( prettyNumber + " ETC");
                 $("#buttonTribeCost").html(" ("+ prettyNumber + " ETC)");
                 tribeReward = Number(web3.fromWei(activeTribeCost / buyPrice)).toFixed(1)
-                $("#infoTribeReward").html( tribeReward + " Point");
+                $("#infoTribeReward").html( tribeReward + " WLTH");
                 
                 var power = (web3.fromWei(activeTribeCost) * activeTribeWaiting * 20000) 
                 loadLocation(tribeAddress, power)
@@ -292,7 +292,7 @@ function expiredTribeAlert(){
 }
 function joinTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Joined'});};
-    alertify.success("Bergabung sekarang! Untuk Hadiah " + tribeReward + " Point")
+    alertify.success("Bergabung sekarang! Untuk Hadiah " + tribeReward + " WLTH")
     alertify.alert(
     "Bergabung",                        
     `
@@ -307,7 +307,7 @@ function joinTribeAlert(){
 
 function succesfulTribeAlert(){
     if (typeof gtag !== 'undefined'){gtag('event', 'Tribes', {'event_label': 'Usage', 'event_category': 'Filled'});};
-    alertify.success("Hadiah Berhasil " + tribeReward + " Point")
+    alertify.success("Hadiah Berhasil " + tribeReward + " WLTH")
     alertify.alert(
     "Hadiah Selesai",                        
     `
