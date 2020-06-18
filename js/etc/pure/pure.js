@@ -152,7 +152,7 @@ function reinvestFromCrop(referrer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Reinvest Point. Menunggu Konfirmasi Blockchain.")
+                alertify.success("Reinvest WLTH. Menunggu Konfirmasi Blockchain.")
                 console.log(result);
             } else {
                 console.log(error);
