@@ -4,7 +4,7 @@ body {
 
 .cityscape {
     /* The image used */
-    background-image: url("/img/landing/planet.jpeg");
+    background-image: url("/img/landing/planet.jpg");
 
     /* Full height */
     height: 0%;
@@ -307,6 +307,7 @@ i.blue.icon {
 
 .cropAddress {
     font-size: 12px;
+    color: black;
 }
 
 .title {
@@ -316,6 +317,19 @@ i.blue.icon {
     margin-right: 20px;
 }
 
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .green {
     color: #61c87a;
 }
@@ -402,10 +416,6 @@ i.blue.icon {
     padding-top: 15px;
     padding-bottom: 15px;
     margin: 0 auto;
-}
-
-.portfolio#portfolioButton {
-    display: inline;
 }
 
 .green {
@@ -595,28 +605,6 @@ i.blue.icon {
     height: 40px;
 }
 
-/* Style the navigation menu */
-.topnav {
-    overflow: hidden;
-    margin-bottom: 0px; 
-    background: rgba(0, 0, 0, .1) !important;
-    position: relative;
-  }
-  
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
-    display: none;
-  }
-  
-  /* Style navigation menu links */
-  .topnav a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }
-
 
 /* DESIGN PAGE */
 .circle-green {
@@ -665,6 +653,28 @@ i.blue.icon {
 
 
 
+
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    margin-bottom: 0px; 
+    background: rgba(0, 0, 0, .1) !important;
+    position: relative;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
   
   /* Style the hamburger menu */
   .topnav a.icon {
@@ -685,3 +695,41 @@ i.blue.icon {
     color: white;
   }
 
+  .qrCanvas {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+
+  .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+/* Info Table */
+
+.green-item {
+    background-color: #b7d6aa;
+}
+
+.red-item {
+    background-color: #ea999a;
+}
+
+.yellow-item {
+    background-color: #fee49d;
+}
+
+/* Team */
+
+.team-picture {
+    border-radius: 50%;
+}
