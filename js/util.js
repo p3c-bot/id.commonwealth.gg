@@ -95,13 +95,14 @@ function changeNetworkMessage(){
     `
     <h1 id="loginWarning" class="login-warning">Login ke Saturn wallet, dan refresh!</h1>
     <a href="/use.html"><img id="loginLogo" src="img/logo/etc-title-white.jpg" class="ui image etc-logo center-larger network-title"/></a>
-    <a href="/use.html"><img id="loginLogo" src="img/logo/eth-title-soon.png" class="ui image etc-logo center-larger network-title"/></a>
+    <a href="https://eth.commonwealth.gg/"><img id="loginLogo" src="img/logo/eth-title-soon.png" class="ui image etc-logo center-larger network-title"/></a>
     `
   )
 }
 
 $( "#changeNetwork" ).click(function() {
   changeNetworkMessage()
+  if (typeof gtag !== 'undefined'){gtag('event', 'Wallet', {'event_label': 'Usage', 'event_category': 'ChangeNetwork'});};
 });
 
 
